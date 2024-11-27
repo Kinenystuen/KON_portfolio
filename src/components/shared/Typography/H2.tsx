@@ -1,0 +1,12 @@
+import { H1Props } from "../../../library/types";
+
+function H2({ className, children }: H1Props) {
+  return (
+    <h2
+      className={`font-header text-2xl font-semibold text-black ${className}`}
+    >
+      {children}
+    </h2>
+  );
+}
+export default H2;
