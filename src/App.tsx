@@ -1,23 +1,19 @@
-import { useState } from "react";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Home from "./_root/pages/Home";
+import RootLayout from "./_root/RootLayout";
+import PageNotFound from "./_root/pages/PageNotFound";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        {/* Public routes */}
+        <Route element={<RootLayout />}>
+          <Route index element={<Home />} />
+          <Route path="art" element={<div>Art</div>} />
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
+      </Routes>
     </>
   );
 }
