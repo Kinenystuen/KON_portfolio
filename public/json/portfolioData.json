@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Square Eyes",
+    "description": "A website for a fictional company, selling movies.",
+    "year": 2023,
+    "type": "Cross-course project",
+    "image": "/src/assets/img/Square_eyes_pro.png",
+    "githubRepo": "https://github.com/Kinenystuen/SquareEyes_ID",
+    "liveSite": "https://squareeyes-id.netlify.app/"
+  },
+  {
+    "id": 2,
+    "name": "Community Science Museum",
+    "description": "A HTML & CSS website for a fictional museum for kids.",
+    "year": 2023,
+    "type": "Semester project",
+    "image": "/src/assets/img/CSM_semester_project.png",
+    "githubRepo": "https://github.com/Kinenystuen/CommunityScienceMuseum_sp1",
+    "liveSite": "https://sciencemuseumsp1.netlify.app/"
+  },
+  {
+    "id": 3,
+    "name": "Mountain Life",
+    "description": "A blog about an area called Kvitdalen, and what to find, see and to do there.",
+    "year": 2024,
+    "type": "Project exam 1",
+    "image": "/src/assets/img/Homepage_MountainLife.png",
+    "githubRepo": "https://github.com/Noroff-FEU-Assignments/project-exam-1-Kinenystuen",
+    "liveSite": "https://mountainlife.netlify.app/"
+  }
+]
