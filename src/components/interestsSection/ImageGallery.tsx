@@ -4,24 +4,22 @@ const ImageGallery: React.FC<{ direction: string }> = ({ direction }) => {
   const dynamicImages =
     direction === "left"
       ? [
-          "/src/assets/img/Bilde_Kine.jpg",
-          "/src/assets/img/nature/IMG_0558.jpg",
-          "/src/assets/img/nature/IMG_0704.JPG",
-          "/src/assets/img/nature/IMG_2128.jpg",
-          "/src/assets/img/nature/IMG_4266.JPEG"
+          "/assets/img/Bilde_Kine.jpg",
+          "/assets/img/nature/IMG_0558.jpg",
+          "/assets/img/nature/IMG_0704.JPG",
+          "/assets/img/nature/IMG_2128.jpg",
+          "/assets/img/nature/IMG_4266.JPEG"
         ]
       : [
-          "/src/assets/img/art/IMG_0220.JPG",
-          "/src/assets/img/art/2017.JPG",
-          "/src/assets/img/art/2015_4.JPG",
-          "/src/assets/img/art/2015_3.JPG",
-          "/src/assets/img/art/2015_2.JPG"
+          "/assets/img/art/IMG_0220.JPG",
+          "/assets/img/art/2017.JPG",
+          "/assets/img/art/2015_4.JPG",
+          "/assets/img/art/2015_3.JPG",
+          "/assets/img/art/2015_2.JPG"
         ];
 
   const fixedImage =
-    direction === "left"
-      ? "/src/assets/Art_mountain.svg"
-      : "/src/assets/Art_paint.svg";
+    direction === "left" ? "/assets/Art_mountain.svg" : "/assets/Art_paint.svg";
   const fixedImagePlaced = direction === "left" ? "" : "ms-4 md:ms-12";
 
   const directionRounded =

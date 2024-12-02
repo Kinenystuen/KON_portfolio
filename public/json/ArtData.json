@@ -2,49 +2,49 @@
   {
     "id": 1,
     "image": {
-      "url": "/src/assets/img/art/2015_2.JPG",
+      "url": "/assets/img/art/2015_2.JPG",
       "alt": "Prosjekt: Modernisering av kjent maleri 'Kvitebjørn kong Valemon'"
     }
   },
   {
     "id": 2,
     "image": {
-      "url": "/src/assets/img/art/2015_3.jpg",
+      "url": "/assets/img/art/2015_3.jpg",
       "alt": ""
     }
   },
   {
     "id": 3,
     "image": {
-      "url": "/src/assets/img/art/2015_4.JPG",
+      "url": "/assets/img/art/2015_4.JPG",
       "alt": ""
     }
   },
   {
     "id": 4,
     "image": {
-      "url": "/src/assets/img/art/2015_6.JPG",
+      "url": "/assets/img/art/2015_6.JPG",
       "alt": ""
     }
   },
   {
     "id": 5,
     "image": {
-      "url": "/src/assets/img/art/2017.JPG",
+      "url": "/assets/img/art/2017.JPG",
       "alt": "Juleinspirert maleri. Motiv Varden, Kvittjønnan"
     }
   },
   {
     "id": 6,
     "image": {
-      "url": "/src/assets/img/art/Bier1.jpg",
+      "url": "/assets/img/art/Bier1.jpg",
       "alt": "Fjellbiene logo maleri"
     }
   },
   {
     "id": 7,
     "image": {
-      "url": "/src/assets/img/art/IMG_0220.JPG",
+      "url": "/assets/img/art/IMG_0220.JPG",
       "alt": ""
     }
   }

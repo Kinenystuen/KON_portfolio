@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
         {/* Hero Image */}
         <div className="absolute bottom-0 left-[0%] sm:left-[10%] md:left-[15%] lg:left-[18%] z-30">
           <img
-            src="/src/assets/KON_cropped.png"
+            src="/assets/KON_cropped.png"
             alt="Kine Odden Nystuen"
             className="xs:h-90  w-auto"
           />

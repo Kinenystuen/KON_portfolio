@@ -45,7 +45,7 @@ const HeaderNav = () => {
       {/* Logo Section */}
       <div className="flex lg:flex-1 z-30">
         <Link to="/" className="m-1.5 p-2" onClick={() => setMenuOpen(false)}>
-          <img src="/src/assets/KON_logo.svg" alt="Site logo" />
+          <img src="/assets/KON_logo.svg" alt="Site logo" />
           <span className="sr-only">KON - Homepage</span>
         </Link>
       </div>

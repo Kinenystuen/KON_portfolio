@@ -22,7 +22,7 @@ const HeroText: React.FC = () => {
           opacity-10
           pointer-events-none
         "
-        src="/src/assets/KON_text.svg"
+        src="/assets/KON_text.svg"
         alt="KON text svg"
       />
 

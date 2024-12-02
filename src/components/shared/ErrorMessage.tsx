@@ -12,7 +12,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, children }) => {
       <div className="my-10 text-center">
         <img
           className="my-5"
-          src="/src/assets/Error_robot.svg"
+          src="/assets/Error_robot.svg"
           alt="Page not found"
         />
         <H1 className="uppercase font-bold">{message}</H1>
