@@ -26,16 +26,16 @@ const ImageGallery: React.FC<{ direction: string }> = ({ direction }) => {
 
   const directionRounded =
     direction === "left"
-      ? "rounded-r-lg  items-end"
-      : "rounded-l-lg  items-start";
+      ? "rounded-r-lg  items-end justify-end"
+      : "rounded-l-lg  items-start ";
   const directionDisplay =
     direction === "left" ? "flex-row-reverse" : "flex-row";
 
   const typeName = direction === "left" ? "Nature" : "Art";
   const type =
     direction === "left"
-      ? "right-[7rem] xl:right-[10rem]"
-      : "left-[7rem] xl:left-[10rem] ";
+      ? "right-[2.5rem] sm:right-[5rem] md:right-[7rem] xl:right-[10rem]"
+      : "left-[2.5rem] sm:left-[5rem] md:left-[7rem] xl:left-[10rem] ";
 
   return (
     <div
@@ -54,8 +54,8 @@ const ImageGallery: React.FC<{ direction: string }> = ({ direction }) => {
             src={fixedImage}
             alt="Image"
           />
-          <div className="w-full overflow-x-auto scrollbar-custom bg-customGreen-500">
-            <div className="flex m-0">
+          <div className="w-full overflow-x-auto md:overflow-hidden scrollbar-custom bg-customGreen-500">
+            <div className={`flex m-0  ${directionRounded}`}>
               {dynamicImages.map((image, index) => (
                 <img
                   key={index}
