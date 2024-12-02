@@ -13,7 +13,9 @@ const useInView = (threshold: number = 0.1) => {
     );
 
     const element = elementRef.current;
-    if (element) observer.observe(element);
+    if (element) {
+      observer.observe(element);
+    }
 
     return () => {
       if (element) observer.unobserve(element);
