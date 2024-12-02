@@ -63,7 +63,7 @@ button:hover {
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto var(--tw-color-gray-200);
 }
 
 @media (prefers-color-scheme: light) {
@@ -98,14 +98,11 @@ button:focus-visible {
   width: 8px;
 }
 
-.scrollbar-custom::-webkit-scrollbar-track {
-  background: var(--tw-color-gray-200);
-}
-
 .scrollbar-custom::-webkit-scrollbar-thumb {
   background-color: var(--tw-color-green-500);
   border-radius: 20px;
-  border: "1px solid var(--tw-color-gray-200)";
+  border: 1px solid var(--tw-color-gray-200);
+
 }
 
 .scrollbar-custom::-webkit-scrollbar-track {
@@ -132,6 +129,7 @@ button:focus-visible {
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   50%,
