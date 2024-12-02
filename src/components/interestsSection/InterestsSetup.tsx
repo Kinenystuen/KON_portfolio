@@ -29,7 +29,7 @@ const InterestsSetup: React.FC<InterestsProps> = ({
       <div className="text-center my-3">
         <Link
           to={link}
-          className="button text-customGreen-900 hover:text-customGreen-600 text-lg font-bold"
+          className="button border-2 hover:border-gray-300  p-0 m-0 text-customGreen-900 hover:text-customGreen-600 text-lg font-bold"
         >
           See more
         </Link>

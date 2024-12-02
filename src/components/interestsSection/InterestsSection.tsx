@@ -16,11 +16,11 @@ const InterestsSection = () => {
       </div>
       <InterestsSetup
         images={<ImageGallery direction={"right"} />}
-        link="/gallery"
+        link="/gallery/art"
       />
       <InterestsSetup
         images={<ImageGallery direction={"left"} />}
-        link="/gallery2"
+        link="/gallery/nature"
         direction="left"
       />
     </Section>
