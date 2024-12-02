@@ -7,6 +7,7 @@ import { useState } from "react";
 import ModalImage from "../../components/ui/ModalImage";
 import Breadcrumb from "../../components/BreadCrumItem";
 import H2 from "../../components/shared/Typography/H2";
+import { getBaseUrl } from "../../components/shared/BaseNameUtils";
 
 const PageGallery = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,9 +16,11 @@ const PageGallery = () => {
     null
   );
 
-  const jsonUrl = id === "nature" ? `/json/MeData.json` : `/json/ArtData.json`;
+  const jsonUrl = id === "nature" ? `json/MeData.json` : `json/ArtData.json`;
   const headerTitle = id === "nature" ? "Nature" : "Art";
-  const { data, isLoading, isError } = useApi<Gallery[]>(`${jsonUrl}`);
+  const { data, isLoading, isError } = useApi<Gallery[]>(
+    `${import.meta.env.BASE_URL}${jsonUrl}`
+  );
 
   if (isLoading) {
     return <Loader />;
@@ -77,7 +80,7 @@ const PageGallery = () => {
             aria-label={`View image ${galleryItem.image.alt}`}
           >
             <img
-              src={galleryItem.image.url}
+              src={getBaseUrl(galleryItem.image.url)}
               alt={galleryItem.image.alt}
               className="h-auto max-w-full rounded-sm shadow-md"
             />
@@ -97,7 +100,7 @@ const PageGallery = () => {
           <div className="relative">
             <div className="flex items-center justify-center">
               <img
-                src={data[currentImageIndex].image.url}
+                src={getBaseUrl(data[currentImageIndex].image.url)}
                 alt={data[currentImageIndex].image.alt}
                 className="h-auto max-w-full max-h-[90vh] rounded-sm shadow-md object-contain"
               />

@@ -33,7 +33,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
       >
         {/* Image */}
         <img
-          src={image}
+          src={getBaseUrl(image)}
           alt={name}
           className="w-full h-64 object-cover"
           onError={(e) => {
@@ -77,12 +77,12 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
             {/* Left Column: Image */}
             <div className="lg:w-2/3 h-full shadow-xl">
               <img
-                src={image}
+                src={getBaseUrl(image)}
                 alt={name}
                 className="rounded-lg w-full h-full object-cover"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src =
-                    "/path/to/placeholder-image.jpg";
+                    `${getBaseUrl("/assets/Robot_builder.svg")}`;
                 }}
               />
             </div>
