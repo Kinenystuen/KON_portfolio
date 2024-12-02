@@ -3,7 +3,7 @@ import { H1Props } from "../../../library/types";
 function H2({ className, children }: H1Props) {
   return (
     <h2
-      className={`font-header text-2xl font-semibold text-black ${className}`}
+      className={`font-header text-2xl px-4 font-semibold text-black ${className}`}
     >
       {children}
     </h2>
