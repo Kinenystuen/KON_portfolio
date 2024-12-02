@@ -9,5 +9,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src")
     }
   },
-  base: "/"
+  base: "/KON_portfolio/",
+  build: {
+    outDir: "dist"
+  },
+  server: {
+    port: 8080
+  },
+  preview: {
+    port: 8080
+  }
 });
