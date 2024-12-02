@@ -13,7 +13,7 @@ function Button({
       onClick={onClick}
       title={title}
       aria-label={ariaLabel}
-      className={`hover:bg-gray-100 hover:border-customGreen-600 dark:hover:bg-gray-600 dark:hover:text-white ${className} ${
+      className={`button hover:bg-gray-100 hover:border-customGreen-600 dark:hover:bg-gray-600 dark:hover:text-white ${className} ${
         ButtonType === "primary" ? "button--primary" : "button--secondary"
       }`}
     >
