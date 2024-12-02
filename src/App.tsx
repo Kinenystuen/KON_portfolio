@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./_root/pages/Home";
 import RootLayout from "./_root/RootLayout";
 import PageNotFound from "./_root/pages/PageNotFound";
+import PageGallery from "./_root/pages/PageGallery";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         {/* Public routes */}
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
-          <Route path="art" element={<div>Art</div>} />
+          <Route path="gallery/:id" element={<PageGallery />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
