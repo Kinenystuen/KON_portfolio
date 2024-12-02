@@ -3,6 +3,7 @@ import { headerNavLinks } from "../../../library/constants";
 import { INavLink } from "../../../library/types";
 import { useEffect, useRef, useState } from "react";
 import HamburgerMenu from "./MenuBtn";
+import { getBaseUrl } from "../BaseNameUtils";
 
 const HeaderNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,7 +46,7 @@ const HeaderNav = () => {
       {/* Logo Section */}
       <div className="flex lg:flex-1 z-30">
         <Link to="/" className="m-1.5 p-2" onClick={() => setMenuOpen(false)}>
-          <img src="/assets/KON_logo.svg" alt="Site logo" />
+          <img src={getBaseUrl("/assets/KON_logo.svg")} alt="Site logo" />
           <span className="sr-only">KON - Homepage</span>
         </Link>
       </div>
