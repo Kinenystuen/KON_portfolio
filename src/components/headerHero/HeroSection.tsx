@@ -6,7 +6,7 @@ import H1 from "../shared/Typography/H1";
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center items-center lg:min-h-[80vh] lg:h-full">
+    <div className="flex flex-col justify-center items-center lg:min-h-[80vh] lg:h-full mt-6">
       <H1 className="text-2xl md:text-4xl font-bold text-center xs:mb-[10%] sm:mb-[0%]">
         Kine Odden Nystuen
       </H1>
