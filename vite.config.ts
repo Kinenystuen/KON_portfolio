@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "src")
       }
     },
-    base: mode === "github" ? "/KON_portfolio/" : "/",
+    base: "/KON_portfolio/",
     build: {
       outDir: "dist"
     },
