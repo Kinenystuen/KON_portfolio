@@ -16,7 +16,7 @@ const FetchProjects: React.FC<{
   children: (data: Projects[]) => React.ReactNode;
 }> = ({ children }) => {
   const { data, isLoading, isError } = useApi<Projects[]>(
-    "/json/portfolioData.json"
+    `${import.meta.env.BASE_URL}json/portfolioData.json`
   );
 
   if (isLoading) {

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useApi } from "../../hooks/UseApi";
 import Loader from "../ui/Loader";
-
 interface Skill {
   id: string;
   name: string;
@@ -15,21 +14,34 @@ interface KnowledgeCardsProps {
 }
 
 const KnowledgeCards: React.FC<KnowledgeCardsProps> = ({ isInView }) => {
-  const { data, isLoading, isError } = useApi<Skill[]>("/json/skillsData.json");
+  const { data, isLoading, isError } = useApi<Skill[]>(
+    `${import.meta.env.BASE_URL}json/skillsData.json`
+  );
+  const [skills, setSkills] = useState<Skill[]>([]);
   const [visibleIndex, setVisibleIndex] = useState<number>(0);
   const [hasAnimated, setHasAnimated] = useState<boolean>(false);
 
   useEffect(() => {
+    if (data) {
+      const updatedSkills = data.map((skill) => ({
+        ...skill,
+        image: skill.image
+      }));
+      setSkills(updatedSkills);
+    }
+  }, [data]);
+
+  useEffect(() => {
     let intervalId: NodeJS.Timeout | null = null;
 
-    if (isInView && data && !hasAnimated) {
+    if (isInView && skills && !hasAnimated) {
       setVisibleIndex(0);
       setHasAnimated(true);
 
-      data.forEach((_, index) => {
+      skills.forEach((_, index) => {
         setTimeout(() => {
           setVisibleIndex((prevIndex) =>
-            Math.min(prevIndex + 1, data.length - 1)
+            Math.min(prevIndex + 1, skills.length - 1)
           );
         }, index * 150);
       });
@@ -38,15 +50,15 @@ const KnowledgeCards: React.FC<KnowledgeCardsProps> = ({ isInView }) => {
     return () => {
       if (intervalId) clearInterval(intervalId);
     };
-  }, [isInView, hasAnimated, data]);
+  }, [isInView, hasAnimated, skills]);
 
   if (isLoading) return <Loader />;
   if (isError) return <div>Error fetching data...</div>;
-  if (!data) return <div>No data available</div>;
+  if (!skills) return <div>No data available</div>;
 
   return (
     <div className="flex flex-wrap gap-2 justify-center">
-      {data.map((knowledge, index) => (
+      {skills.map((knowledge, index) => (
         <Link
           to={knowledge.link}
           key={knowledge.id}

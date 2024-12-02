@@ -5,20 +5,19 @@ const ImageGallery: React.FC<{ direction: string }> = ({ direction }) => {
   const dynamicImages =
     direction === "left"
       ? [
-          "/assets/img/Bilde_Kine.jpg",
-          "/assets/img/nature/IMG_0558.jpg",
-          "/assets/img/nature/IMG_0704.JPG",
-          "/assets/img/nature/IMG_2128.jpg",
-          "/assets/img/nature/IMG_4266.JPEG"
+          getBaseUrl("/assets/img/Bilde_Kine.jpg"),
+          getBaseUrl("/assets/img/nature/IMG_0558.jpg"),
+          getBaseUrl("/assets/img/nature/IMG_0704.JPG"),
+          getBaseUrl("/assets/img/nature/IMG_2128.jpg"),
+          getBaseUrl("/assets/img/nature/IMG_4266.JPEG")
         ]
       : [
-          "/assets/img/art/IMG_0220.JPG",
-          "/assets/img/art/2017.JPG",
-          "/assets/img/art/2015_4.JPG",
-          "/assets/img/art/2015_3.JPG",
-          "/assets/img/art/2015_2.JPG"
+          getBaseUrl("/assets/img/art/IMG_0220.JPG"),
+          getBaseUrl("/assets/img/art/2017.JPG"),
+          getBaseUrl("/assets/img/art/2015_4.JPG"),
+          getBaseUrl("/assets/img/art/2015_3.JPG"),
+          getBaseUrl("/assets/img/art/2015_2.JPG")
         ];
-
   const fixedImage =
     direction === "left" ? "/assets/Art_mountain.svg" : "/assets/Art_paint.svg";
   const fixedImagePlaced = direction === "left" ? "" : "ms-4 md:ms-12";
