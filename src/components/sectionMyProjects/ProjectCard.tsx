@@ -4,6 +4,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../ui/Modal";
 import H3 from "../shared/Typography/H3";
 import P from "../shared/Typography/P";
+import { getBaseUrl } from "../shared/BaseNameUtils";
 
 interface ProjectCardProps {
   name: string;
@@ -36,7 +37,9 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
           alt={name}
           className="w-full h-64 object-cover"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = "/assets/Robot_builder.svg";
+            (e.target as HTMLImageElement).src = getBaseUrl(
+              "/assets/Robot_builder.svg"
+            );
           }}
         />
 

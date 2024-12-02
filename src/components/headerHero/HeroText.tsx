@@ -1,4 +1,5 @@
 import React from "react";
+import { getBaseUrl } from "../shared/BaseNameUtils";
 
 const HeroText: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const HeroText: React.FC = () => {
           opacity-10
           pointer-events-none
         "
-        src="/assets/KON_text.svg"
+        src={getBaseUrl("/assets/KON_text.svg")}
         alt="KON text svg"
       />
 

@@ -3,6 +3,7 @@ import HeroText from "./HeroText";
 import "./HeroSection.css";
 import ScrollDownArrow from "../ArrowDown";
 import H1 from "../shared/Typography/H1";
+import { getBaseUrl } from "../shared/BaseNameUtils";
 
 const HeroSection: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const HeroSection: React.FC = () => {
         {/* Hero Image */}
         <div className="absolute bottom-0 left-[0%] sm:left-[10%] md:left-[15%] lg:left-[18%] z-30">
           <img
-            src="/assets/KON_cropped.png"
+            src={getBaseUrl("/assets/KON_cropped.png")}
             alt="Kine Odden Nystuen"
             className="xs:h-90  w-auto"
           />

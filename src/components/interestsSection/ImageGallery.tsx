@@ -1,3 +1,4 @@
+import { getBaseUrl } from "../shared/BaseNameUtils";
 import H3 from "../shared/Typography/H3";
 
 const ImageGallery: React.FC<{ direction: string }> = ({ direction }) => {
@@ -49,7 +50,7 @@ const ImageGallery: React.FC<{ direction: string }> = ({ direction }) => {
         >
           <img
             className={`h-auto w-16 md:w-48 m-2 sm:m-4 md:m-8 object-cover${fixedImagePlaced} `}
-            src={fixedImage}
+            src={getBaseUrl(fixedImage)}
             alt="Image"
           />
           <div className="w-full overflow-x-auto md:overflow-hidden scrollbar-custom bg-customGreen-500">
