@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "image": {
+      "url": "/src/assets/img/nature/IMG_0558.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "id": 2,
+    "image": {
+      "url": "/src/assets/img/nature/IMG_0704.JPG",
+      "alt": ""
+    }
+  },
+  {
+    "id": 3,
+    "image": {
+      "url": "/src/assets/img/nature/IMG_2128.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "id": 4,
+    "image": {
+      "url": "/src/assets/img/nature/IMG_4266.JPEG",
+      "alt": ""
+    }
+  }
+]
