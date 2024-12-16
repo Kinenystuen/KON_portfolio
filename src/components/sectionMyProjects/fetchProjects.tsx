@@ -1,5 +1,9 @@
 import Loader from "../ui/Loader";
 import { useApi } from "../../hooks/UseApi";
+import ErrorMessage from "../shared/ErrorMessage";
+import P from "../shared/Typography/P";
+import { Link } from "react-router-dom";
+import Button from "../shared/Button/Button";
 
 interface Projects {
   id: string;
@@ -15,7 +19,7 @@ interface Projects {
 const FetchProjects: React.FC<{
   children: (data: Projects[]) => React.ReactNode;
 }> = ({ children }) => {
-  const { data, isLoading, isError } = useApi<Projects[]>(
+  const { data, isLoading, isError, errorMessage } = useApi<Projects[]>(
     `${import.meta.env.BASE_URL}json/portfolioData.json`
   );
 
@@ -24,7 +28,14 @@ const FetchProjects: React.FC<{
   }
 
   if (isError) {
-    return <div>Error fetching data...</div>;
+    return (
+      <ErrorMessage message="Data not found">
+        <P>{errorMessage}</P>
+        <Link to="/">
+          <Button className="my-8 px-4 inline-block">Go to homepage</Button>
+        </Link>
+      </ErrorMessage>
+    );
   }
 
   if (!data) {
