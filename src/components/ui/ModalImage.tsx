@@ -82,7 +82,7 @@ const ModalImage: React.FC<ModalProps> = ({
     >
       <Button
         onClick={onClose}
-        className="absolute top-5 right-5  bg-transparent text-white px-4 py-2 rounded-l-lg hover:bg-gray-700 focus:outline-none focus:bg-gray-700 z-30"
+        className="absolute top-5 right-5 bg-transparent text-white px-4 py-2 rounded-l-lg hover:bg-gray-700 focus:outline-none focus:bg-gray-700 z-30"
         aria-label="Close Modal"
         title="Close"
       >

@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Green Box */}
-        <div className="flex flex-col items-center content-center relative shadow-md rounded-md bg-customGreen overflow-hidden w-full h-80 mt-1 sm:mt-10">
+        <div className="flex flex-col items-center content-center relative shadow-md rounded-md bg-customGreen dark:bg-customGreenDark overflow-hidden w-full h-80 mt-1 sm:mt-10">
           <HeroText />
         </div>
       </div>
