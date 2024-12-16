@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Section from "../../components/shared/Section";
 import { useApi } from "../../hooks/UseApi";
 import Loader from "../../components/ui/Loader";
@@ -8,6 +8,9 @@ import ModalImage from "../../components/ui/ModalImage";
 import Breadcrumb from "../../components/BreadCrumItem";
 import H2 from "../../components/shared/Typography/H2";
 import { getBaseUrl } from "../../components/shared/BaseNameUtils";
+import ErrorMessage from "../../components/shared/ErrorMessage";
+import P from "../../components/shared/Typography/P";
+import Button from "../../components/shared/Button/Button";
 
 const PageGallery = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,14 +21,23 @@ const PageGallery = () => {
 
   const jsonUrl = id === "nature" ? `json/MeData.json` : `json/ArtData.json`;
   const headerTitle = id === "nature" ? "Nature" : "Art";
-  const { data, isLoading, isError } = useApi<Gallery[]>(
+  const { data, isLoading, isError, errorMessage } = useApi<Gallery[]>(
     `${import.meta.env.BASE_URL}${jsonUrl}`
   );
 
   if (isLoading) {
     return <Loader />;
   }
-  if (isError) return <div>Error loading data.</div>;
+  if (isError) {
+    return (
+      <ErrorMessage message="Data not found">
+        <P>{errorMessage}</P>
+        <Link to="/">
+          <Button className="my-8 px-4 inline-block">Go to homepage</Button>
+        </Link>
+      </ErrorMessage>
+    );
+  }
   if (!data || data.length === 0) return <div>No data available.</div>;
 
   /* Breadcrumb items */
@@ -63,11 +75,11 @@ const PageGallery = () => {
       <div className="flex items-center justify-between mb-6">
         <H2 className="font-bold text-2xl uppercase">{headerTitle} gallery</H2>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-center object-cover items-center">
+      <div className="masonry-container columns-2 sm:columns-3 md:columns-5 gap-2">
         {data.map((galleryItem, index) => (
           <div
             key={galleryItem.id}
-            className="scaleUp"
+            className="mb-[1rem] break-inside-avoid scaleUp"
             onClick={() => handleImageClick(index)}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
