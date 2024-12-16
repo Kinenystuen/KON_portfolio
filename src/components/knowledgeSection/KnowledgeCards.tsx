@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useApi } from "../../hooks/UseApi";
 import Loader from "../ui/Loader";
+import ErrorMessage from "../shared/ErrorMessage";
+import Button from "../shared/Button/Button";
+import P from "../shared/Typography/P";
 interface Skill {
   id: string;
   name: string;
@@ -14,7 +17,7 @@ interface KnowledgeCardsProps {
 }
 
 const KnowledgeCards: React.FC<KnowledgeCardsProps> = ({ isInView }) => {
-  const { data, isLoading, isError } = useApi<Skill[]>(
+  const { data, isLoading, isError, errorMessage } = useApi<Skill[]>(
     `${import.meta.env.BASE_URL}json/skillsData.json`
   );
   const [skills, setSkills] = useState<Skill[]>([]);
@@ -53,7 +56,16 @@ const KnowledgeCards: React.FC<KnowledgeCardsProps> = ({ isInView }) => {
   }, [isInView, hasAnimated, skills]);
 
   if (isLoading) return <Loader />;
-  if (isError) return <div>Error fetching data...</div>;
+  if (isError) {
+    return (
+      <ErrorMessage message="Data not found">
+        <P>{errorMessage}</P>
+        <Link to="/">
+          <Button className="my-8 px-4 inline-block">Go to homepage</Button>
+        </Link>
+      </ErrorMessage>
+    );
+  }
   if (!skills) return <div>No data available</div>;
 
   return (

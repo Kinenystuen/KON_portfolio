@@ -74,8 +74,8 @@ button:focus-visible {
   --hover-color: #747bff;
   --button-bg: #f9f9f9;
   --svg-fill-light: #292f36;
-  --customGreen: #8fa984;
-  --customGreenLight: #a3bfa8;
+  --customGreen: #72876a;
+  --customGreenLight: #8fa984;
 }
 
 .light {
@@ -96,7 +96,7 @@ button:focus-visible {
   --font-color: #fffded;
   --svg-fill-light: #0a0f1d;
   --customGreen: #4a5d46;
-  --customGreenLight: #5c7457;
+  --customGreenLight: #7d9079;
 }
 
 body {
