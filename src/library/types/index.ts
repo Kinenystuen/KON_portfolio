@@ -16,7 +16,7 @@ export type H1Props = {
 /* Button props */
 export type ButtonProps = {
   ButtonType?: "primary" | "secondary";
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
   className?: string;
   title?: string;
@@ -29,7 +29,7 @@ export interface LoaderProps {
 }
 
 export interface Gallery {
-  id: string;
+  id: number;
   image: {
     url: string;
     alt: string;

@@ -4,6 +4,7 @@ import { INavLink } from "../../../library/types";
 import { useEffect, useRef, useState } from "react";
 import HamburgerMenu from "./MenuBtn";
 import { getBaseUrl } from "../BaseNameUtils";
+import ThemeToggle from "../ThemeToggle";
 
 const HeaderNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,21 +40,28 @@ const HeaderNav = () => {
   return (
     <div
       ref={navRef}
-      className={`flex justify-between content-center items-center w-full h-auto mx-auto lg:bg-customBg lg:bg-opacity-80  ${
-        !menuOpen ? "" : ""
-      }`}
+      className={`flex justify-between content-center items-center w-full h-auto mx-auto lg:bg-customBg lg:bg-opacity-80 dark:lg:bg-customBgDark dark:lg:bg-opacity-80`}
     >
       {/* Logo Section */}
       <div className="flex lg:flex-1 z-30">
         <Link to="/" className="m-1.5 p-2" onClick={() => setMenuOpen(false)}>
-          <img src={getBaseUrl("/assets/KON_logo.svg")} alt="Site logo" />
+          <img
+            src={getBaseUrl("/assets/KON_logo.svg")}
+            alt="Site logo"
+            className="filter dark:invert"
+          />
           <span className="sr-only">KON - Homepage</span>
         </Link>
       </div>
 
-      {/* Hamburger Menu */}
-      <div className="flex justify-center items-center md:block lg:hidden z-30">
-        <HamburgerMenu isOpen={menuOpen} toggleMenu={toggleMenu} />
+      <div className="flex justify-center content-center items-center">
+        {/* Dark Mode Button */}
+        <ThemeToggle />
+
+        {/* Hamburger Menu */}
+        <div className="flex justify-center items-center md:block lg:hidden z-30">
+          <HamburgerMenu isOpen={menuOpen} toggleMenu={toggleMenu} />
+        </div>
       </div>
 
       {/* Navigation Menu */}
@@ -76,14 +84,13 @@ const HeaderNav = () => {
                 <NavLink
                   to={link.route}
                   onClick={() => setMenuOpen(false)}
-                  className={`relative  text-gray-800 hover:text-black uppercase lg:flex lg:items-center py-2 px-3 text-sm font-semibold after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:bg-customGreen after:transition-all after:duration-300 ${
+                  className={`relative text-gray-800 hover:text-black dark:text-whiteFont-500  uppercase lg:flex lg:items-center py-2 px-3 text-sm font-semibold after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:bg-customGreen after:transition-all after:duration-300 ${
                     isActive
-                      ? "after:w-full text-black "
+                      ? "after:w-full text-black"
                       : "after:w-0 hover:after:w-full"
                   }`}
                 >
                   <span className="sr-only">{link.title}</span>
-                  {/* <FontAwesomeIcon icon={link.icon} className="h-5 w-5 mr-2" /> */}
                   {link.label}
                 </NavLink>
               </li>

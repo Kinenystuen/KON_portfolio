@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class"],
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -17,9 +17,38 @@ export default {
           800: "#394435",
           900: "#1d221a"
         },
+        customGreenDark: {
+          DEFAULT: "#5c7457",
+          100: "#dee3dd",
+          200: "#bec7bc",
+          300: "#9dac9a",
+          400: "#7d9079",
+          500: "#5c7457",
+          600: "#4a5d46",
+          700: "#374634",
+          800: "#252e23",
+          900: "#121711"
+        },
+
         customBg: "#F7F9FA",
+        customBgDark: "#1E1E1E",
+        whiteFont: {
+          DEFAULT: "#F7F9FA",
+          100: "#fdfefe",
+          200: "#fcfdfd",
+          300: "#fafbfc",
+          400: "#f9fafb",
+          500: "#f7f9fa",
+          600: "#c6c7c8",
+          700: "#949596",
+          800: "#636464",
+          900: "#313232"
+        },
         customDarkBlue: {
           DEFAULT: "#292F36"
+        },
+        customDarkBlueDark: {
+          DEFAULT: "#0A0F1D "
         }
       },
       fontFamily: {

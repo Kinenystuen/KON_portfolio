@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Root CSS Variables and Base Styles */
 :root {
   font-family: Nunito, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -66,29 +67,59 @@ button:focus-visible {
   outline: 4px auto var(--tw-color-gray-200);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #f7f9fa;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
+/* Define CSS classes for light and dark modes */
+:root {
+  --color: #213547;
+  --background-color: #f7f9fa;
+  --hover-color: #747bff;
+  --button-bg: #f9f9f9;
+  --svg-fill-light: #292f36;
+  --customGreen: #72876a;
+  --customGreenLight: #8fa984;
 }
 
+.light {
+  --color: #213547;
+  --background-color: #f7f9fa;
+  --hover-color: #747bff;
+  --button-bg: #f9f9f9;
+  --font-color: #000;
+  --customGreen: #8fa984;
+  --customGreenLight: #8fa984;
+}
+
+.dark {
+  --color: #f7f9fa;
+  --background-color: #1e1e1e;
+  --hover-color: #747bff;
+  --button-bg: #1e1e1e;
+  --font-color: #fffded;
+  --svg-fill-light: #0a0f1d;
+  --customGreen: #4a5d46;
+  --customGreenLight: #7d9079;
+}
+
+body {
+  color: var(--color);
+  background-color: var(--background-color);
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+button {
+  background-color: var(--button-bg);
+}
+
+/* Base Layer Styles for Tailwind */
 @layer base {
   :root {
     --radius: 0.5rem;
   }
 }
 
-/* Scrollbar styles with tw classes */
-/* Webkit-based browsers (Chrome, Safari, Edge) */
+/* Scrollbar Styles with Tailwind Colors */
 .scrollbar-custom {
   scrollbar-width: thin;
   scrollbar-color: var(--tw-color-green-500) var(--tw-color-gray-200);
@@ -102,14 +133,13 @@ button:focus-visible {
   background-color: var(--tw-color-green-500);
   border-radius: 20px;
   border: 1px solid var(--tw-color-gray-200);
-
 }
 
 .scrollbar-custom::-webkit-scrollbar-track {
   background-color: var(--tw-color-gray-200);
 }
 
-/* Base button styles */
+/* Base Button Styles */
 .button {
   transition:
     transform 0.3s,
@@ -122,14 +152,13 @@ button:focus-visible {
   display: inline-block;
 }
 
-/* Animation */
+/* Animation Styles */
 .animate {
   animation-duration: 1s;
   animation-fill-mode: both;
 }
 
 @keyframes bounce {
-
   0%,
   20%,
   50%,
@@ -151,6 +180,7 @@ button:focus-visible {
   animation-name: bounce;
 }
 
+/* Scale Up Effect for Hover */
 .scaleUp {
   cursor: pointer;
   transition: transform 0.2s ease;
