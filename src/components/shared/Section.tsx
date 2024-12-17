@@ -13,7 +13,7 @@ function Section({ className, children, animate, visible = 30 }: SectionProps) {
   if (!animate) {
     return (
       <section
-        className={`relative my-20 lg:my-25 lg:mb-30 bg-transparent text-black ${className}`}
+        className={`relative py-20 lg:py-25 lg:pb-30 bg-transparent text-black ${className}`}
       >
         {children}
       </section>

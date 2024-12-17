@@ -69,6 +69,8 @@ button:focus-visible {
 
 /* Define CSS classes for light and dark modes */
 :root {
+  font-family: "nunito", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
   --color: #213547;
   --background-color: #f7f9fa;
   --hover-color: #747bff;
@@ -76,6 +78,10 @@ button:focus-visible {
   --svg-fill-light: #292f36;
   --customGreen: #72876a;
   --customGreenLight: #8fa984;
+
+  /* Autofill styles for light mode */
+  --autofill-bg-light: #f7f7f7;
+  --autofill-text-light: #1a1a1a;
 }
 
 .light {
@@ -86,26 +92,39 @@ button:focus-visible {
   --font-color: #000;
   --customGreen: #8fa984;
   --customGreenLight: #8fa984;
+
+  /* Use light mode autofill colors */
+  --autofill-bg-color: var(--background-color);
+  --autofill-text-color: var(--font-color);
 }
 
 .dark {
   --color: #f7f9fa;
-  --background-color: #1e1e1e;
+  --background-color: #2c2c2c;
   --hover-color: #747bff;
   --button-bg: #1e1e1e;
   --font-color: #fffded;
   --svg-fill-light: #0a0f1d;
   --customGreen: #4a5d46;
   --customGreenLight: #7d9079;
+
+  /* Use dark mode autofill colors */
+  --autofill-bg-color: var(--background-color);
+  --autofill-text-color: var(--font-color);
 }
 
 body {
   color: var(--color);
   background-color: var(--background-color);
+
 }
 
 a:hover {
   color: var(--hover-color);
+}
+
+h1 {
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 button {
@@ -159,6 +178,7 @@ button {
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -188,4 +208,29 @@ button {
 
 .scaleUp:hover {
   transform: scale(1.05);
+}
+
+
+/* Change Autocomplete styles in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--autofill-text-color) !important;
+  color: var(--autofill-text-color) !important;
+  background-color: var(--autofill-bg-color) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--autofill-bg-color) inset !important;
+  background-clip: padding-box !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+input:focus {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  outline: none;
 }

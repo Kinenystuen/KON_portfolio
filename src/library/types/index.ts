@@ -11,6 +11,7 @@ export type INavLink = {
 export type H1Props = {
   className?: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 };
 
 /* Button props */
