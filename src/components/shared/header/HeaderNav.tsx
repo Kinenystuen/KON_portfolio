@@ -40,7 +40,9 @@ const HeaderNav = () => {
   return (
     <div
       ref={navRef}
-      className={`flex justify-between content-center items-center w-full h-auto mx-auto lg:bg-customBg lg:bg-opacity-80 dark:lg:bg-customBgDark dark:lg:bg-opacity-80`}
+      className={`flex justify-between content-center items-center w-full h-auto mx-auto
+                lg:bg-customBg lg:bg-opacity-20 dark:lg:bg-customBgDark dark:lg:bg-opacity-20
+                backdrop-filter backdrop-blur-lg shadow-lg`}
     >
       {/* Logo Section */}
       <div className="flex lg:flex-1 z-30">
