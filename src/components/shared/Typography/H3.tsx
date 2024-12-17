@@ -3,7 +3,7 @@ import { H1Props } from "../../../library/types";
 function H3({ className, children }: H1Props) {
   return (
     <h3
-      className={`text-xl font-semibold text-black dark:text-white ${className}`}
+      className={`text-xl font-semibold text-customBgDark-900 dark:text-whiteFont-500 ${className}`}
     >
       {children}
     </h3>
