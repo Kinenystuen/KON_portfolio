@@ -31,7 +31,18 @@ export default {
         },
 
         customBg: "#F7F9FA",
-        customBgDark: "#1E1E1E",
+        customBgDark: {
+          DEFAULT: "#2c2c2c",
+          100: "#d5d5d5",
+          200: "#ababab",
+          300: "#808080",
+          400: "#565656",
+          500: "#2c2c2c",
+          600: "#232323",
+          700: "#1a1a1a",
+          800: "#121212",
+          900: "#090909"
+        },
         whiteFont: {
           DEFAULT: "#F7F9FA",
           100: "#fdfefe",
