@@ -1,6 +1,6 @@
 const FooterBar = () => {
   return (
-    <footer className="relative">
+    <footer className="relative bg-customBg dark:bg-customBgDark">
       <svg
         viewBox="0 0 1280 38"
         fill="none"
