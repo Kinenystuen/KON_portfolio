@@ -37,7 +37,6 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
   line-height: 1.1;
   font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -78,6 +77,8 @@ button:focus-visible {
   --svg-fill-light: #292f36;
   --customGreen: #72876a;
   --customGreenLight: #8fa984;
+  --color4: #acacde;
+  --color4Light: #bdbde5;
 
   /* Autofill styles for light mode */
   --autofill-bg-light: #f7f7f7;
@@ -92,6 +93,8 @@ button:focus-visible {
   --font-color: #000;
   --customGreen: #8fa984;
   --customGreenLight: #8fa984;
+  --color4: #acacde;
+  --color4Light: #bdbde5;
 
   /* Use light mode autofill colors */
   --autofill-bg-color: var(--background-color);
@@ -107,6 +110,8 @@ button:focus-visible {
   --svg-fill-light: #0a0f1d;
   --customGreen: #4a5d46;
   --customGreenLight: #7d9079;
+  --color4: #182d38;
+  --color4Light: #1e485c;
 
   /* Use dark mode autofill colors */
   --autofill-bg-color: var(--background-color);
