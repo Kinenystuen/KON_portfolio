@@ -39,7 +39,7 @@ const ImageGallery: React.FC<{ direction: string }> = ({ direction }) => {
     <div
       className={`w-11/12 flex flex-col justify-center bg-customGreen overflow-hidden shadow-lg ${directionRounded}`}
     >
-      <div className={`absolute z-30 top-[-1rem] px-4 py-1  ${type}`}>
+      <div className={`absolute top-[-1rem] px-4 py-1  ${type}`}>
         <H3 className="font-other text-[2.25rem] text-4xl ">{typeName}</H3>
       </div>
 
