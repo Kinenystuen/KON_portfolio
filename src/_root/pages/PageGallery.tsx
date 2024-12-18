@@ -70,7 +70,7 @@ const PageGallery = () => {
   };
 
   return (
-    <Section className="container mt-0 relative z-10 bg-customBg">
+    <Section className="container mt-0 relative bg-customBg">
       <Breadcrumb items={breadcrumbItems} />
       <div className="flex items-center justify-between mb-6 ">
         <H2 className="font-bold text-2xl uppercase">{headerTitle} gallery</H2>
@@ -105,7 +105,7 @@ const PageGallery = () => {
           handlePrevious={handlePrevious}
           handleNext={handleNext}
           opacity="bg-opacity-90"
-          className="max-w-screen-2xl"
+          className="max-w-screen-2xl z-30"
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         >

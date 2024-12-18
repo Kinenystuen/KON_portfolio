@@ -7,8 +7,8 @@ const BottomWave = () => {
     >
       <defs>
         <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#8FA984" />
-          <stop offset="100%" stopColor="#7A8E6F" />
+          <stop offset="0%" stopColor="var(--color4Light)" />
+          <stop offset="100%" stopColor="var(--color4)" />
         </linearGradient>
       </defs>
       <path

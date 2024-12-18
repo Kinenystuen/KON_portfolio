@@ -22,6 +22,8 @@ export type ButtonProps = {
   className?: string;
   title?: string;
   ariaLabel?: string;
+  buttonType?: "green" | "blue" | "red" | "transparent";
+  type?: "button" | "submit" | "reset";
 };
 
 /* Loader Props */

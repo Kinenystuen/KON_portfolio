@@ -63,23 +63,25 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
       >
         <div className="flex flex-col">
           {/* Project Title */}
-          <H3 className="text-4xl font-bold  cursor-pointer">{name}</H3>
-          <P className="text-sm cursor-pointer">
+          <H3 className="text-xl sm:text-3xl font-bold cursor-pointer">
+            {name}
+          </H3>
+          <P className="text-xs sm:text-sm cursor-pointer">
             {type} - {year}
           </P>
         </div>
-        <div className="my-auto hover:scale-110 transform duration-300 cursor-pointer">
+        <div className="my-auto hover:scale-110 transform duration-300 cursor-pointer m-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
             className="size-6"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
             />
           </svg>
