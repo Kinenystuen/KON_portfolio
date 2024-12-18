@@ -10,8 +10,8 @@ const KnowledgeSection = () => {
   return (
     <section ref={sectionRef} className="relative">
       <TopWave />
-      <div className="relative bg-gradient-to-r from-customGreen to-customGreen-600 dark:from-customGreenDark-400 dark:to-customGreenDark-600 background-animation">
-        <div className="container mx-auto py-10 pb-12">
+      <div className="relative bg-gradient-to-r from-color4-400 to-color4-500 dark:from-customGreenDark-400 dark:to-customGreenDark-600 background-animation">
+        <div className="container mx-auto py-10 max-w-6xl">
           <H2 className="font-bold text-white uppercase mb-6 animate-fadeIn">
             Knowledge
           </H2>
