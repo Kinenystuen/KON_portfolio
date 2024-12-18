@@ -61,7 +61,6 @@ const AnimatedHeader: React.FC = () => {
   };
 
   const maskSize = calculateSize();
-  console.log(maskSize.height);
 
   // Calculate the bounce transform for the image
   const calculateBounceTransform = () => {
@@ -114,12 +113,14 @@ const AnimatedHeader: React.FC = () => {
               style={{
                 maxHeight: `${parseInt(maskSize.height) - 2}vh`
               }}
-              className="w-auto min-w-fit"
+              className="w-auto w-fit"
             />
           </div>
           {/* Background Image */}
+          {/* <div className="h-screen w-screen bg-gradient-to-br from-color4-300 flex justify-center content-center"></div> */}
           <img
             src={getBaseUrl("/assets/hero_sketch3.png")}
+            // src="https://img.freepik.com/free-vector/hand-drawn-web-design-concept_23-2147839745.jpg?w=360"
             alt="Zoomed"
             className="absolute top-0 left-0 w-full h-screen object-cover object-bottom"
           />
@@ -135,6 +136,19 @@ const AnimatedHeader: React.FC = () => {
       >
         Front-end Developer.
       </p>
+      {/* Svg wave at bottom */}
+      <div className="absolute bottom-0 left-0 w-screen">
+        <svg
+          viewBox="0 0 1280 38"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full text-customBg dark:text-customBgDark"
+        >
+          <path
+            d="M1280 11C1280 11 502.5 46 0 0.5V46H1280V11Z"
+            className="fill-current"
+          />
+        </svg>
+      </div>
     </div>
   );
 };
