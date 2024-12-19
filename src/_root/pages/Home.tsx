@@ -2,6 +2,7 @@ import InterestsSection from "../../components/interestsSection/InterestsSection
 import KnowledgeSection from "../../components/knowledgeSection/KnowledgeSection";
 import MyProjects from "../../components/sectionMyProjects/MyProjects";
 import AnimatedHeader from "./AnimatedHeader";
+import ContactSection from "../../components/contact/contactSection";
 
 const Home = () => {
   return (
@@ -10,11 +11,12 @@ const Home = () => {
         {/* Animated header Section */}
         <AnimatedHeader />
       </div>
-      <div className="relative z-10 bg-customBg dark:bg-customBgDark">
+      <div className="relative z-10 bg-customBg pb-10 dark:bg-customBgDark">
         {/* BODY SECTION */}
         <MyProjects />
         <KnowledgeSection />
         <InterestsSection />
+        <ContactSection />
       </div>
     </div>
   );
