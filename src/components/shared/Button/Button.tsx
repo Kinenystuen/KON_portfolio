@@ -18,7 +18,7 @@ function Button({
       break;
     case "violet":
       buttonClass =
-        "bg-color4-600 hover:bg-color4-700 dark:bg-blue-800 dark:hover:bg-blue-900 border-none text-white";
+        "bg-color4-600 hover:bg-color4-700 border-none text-white border text-white hover:text-white dark:bg-violet-900 dark:hover:bg-violet-800 dark:text-gray-100 border dark:border-violet-900";
       break;
     case "transparent":
       buttonClass =
