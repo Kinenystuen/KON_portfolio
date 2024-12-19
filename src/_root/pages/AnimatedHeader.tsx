@@ -113,7 +113,7 @@ const AnimatedHeader: React.FC = () => {
               style={{
                 maxHeight: `${parseInt(maskSize.height) - 2}vh`
               }}
-              className="w-auto w-fit"
+              className="w-full"
             />
           </div>
           {/* Background Image */}

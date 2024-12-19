@@ -22,13 +22,14 @@ export type ButtonProps = {
   className?: string;
   title?: string;
   ariaLabel?: string;
-  buttonType?: "green" | "blue" | "red" | "transparent";
+  buttonType?: "violet" | "blue" | "transparent";
   type?: "button" | "submit" | "reset";
 };
 
 /* Loader Props */
 export interface LoaderProps {
   theme?: "light" | "dark";
+  className?: string;
 }
 
 export interface Gallery {
