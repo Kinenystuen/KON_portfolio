@@ -36,6 +36,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Load environment variables
+      - name: Set up environment variables
+        run: |
+          echo "VITE_URL_CONTACT_FORM=${{ secrets.VITE_URL_CONTACT_FORM }}" >> .env
+        env:
+          VITE_URL_CONTACT_FORM: ${{ secrets.VITE_URL_CONTACT_FORM }}
+
       # Build the project
       - name: Build project
         run: npm run build
