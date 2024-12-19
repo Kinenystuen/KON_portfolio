@@ -56,8 +56,8 @@ const InterestsBox: React.FC<InterestsBoxProps> = ({
       >
         {/* Hover Circle */}
         <div
-          className={`absolute w-2 h-2 bg-white dark:bg-customBgDark-700 opacity-30 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out ${
-            isHovered ? "scale-[50]" : "scale-100"
+          className={`absolute w-1 h-1 bg-white dark:bg-customBgDark-700 opacity-30 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out ${
+            isHovered ? "scale-[100]" : "scale-100"
           }`}
           style={{
             top: `${mousePosition.y}px`,
