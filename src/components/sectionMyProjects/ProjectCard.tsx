@@ -38,7 +38,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
           className="w-full h-64 object-cover"
           onError={(e) => {
             (e.target as HTMLImageElement).src = getBaseUrl(
-              "/assets/Robot_builder.svg"
+              "assets/Robot_builder.svg"
             );
           }}
         />

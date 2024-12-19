@@ -19,7 +19,7 @@ const ImageGallery: React.FC<{ direction: string }> = ({ direction }) => {
           getBaseUrl("assets/img/art/2015_2.JPG")
         ];
   const fixedImage =
-    direction === "left" ? "/assets/Art_mountain.svg" : "/assets/Art_paint.svg";
+    direction === "left" ? "assets/Art_mountain.svg" : "assets/Art_paint.svg";
   const fixedImagePlaced = direction === "left" ? "" : "ms-4 md:ms-12";
 
   const directionRounded =

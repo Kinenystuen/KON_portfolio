@@ -12,13 +12,13 @@ const InterestsSection = () => {
         <div className="grid grid-cols-2 gap-2 md:gap-6">
           <InterestsBox
             title="Art"
-            image="/assets/Art_paint_1.svg"
+            image="assets/Art_paint_1.svg"
             link="/gallery/art"
             imgPosition="left-4"
           />
           <InterestsBox
             title="Hiking"
-            image="/assets/Art_mountain.svg"
+            image="assets/Art_mountain.svg"
             link="/gallery/nature"
           />
         </div>
