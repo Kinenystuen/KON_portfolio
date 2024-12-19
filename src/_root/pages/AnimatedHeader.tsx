@@ -108,7 +108,7 @@ const AnimatedHeader: React.FC = () => {
             }}
           >
             <img
-              src={getBaseUrl("/assets/KON_cropped.png")}
+              src={getBaseUrl("assets/KON_cropped.png")}
               alt="Kine Odden Nystuen"
               style={{
                 maxHeight: `${parseInt(maskSize.height) - 2}vh`
@@ -119,7 +119,7 @@ const AnimatedHeader: React.FC = () => {
           {/* Background Image */}
           {/* <div className="h-screen w-screen bg-gradient-to-br from-color4-300 flex justify-center content-center"></div> */}
           <img
-            src={getBaseUrl("/assets/hero_sketch3.png")}
+            src={getBaseUrl("assets/hero_sketch3.png")}
             // src="https://img.freepik.com/free-vector/hand-drawn-web-design-concept_23-2147839745.jpg?w=360"
             alt="Zoomed"
             className="absolute top-0 left-0 w-full h-screen object-cover object-bottom"

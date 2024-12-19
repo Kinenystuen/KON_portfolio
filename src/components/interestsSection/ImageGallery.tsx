@@ -5,18 +5,18 @@ const ImageGallery: React.FC<{ direction: string }> = ({ direction }) => {
   const dynamicImages =
     direction === "left"
       ? [
-          getBaseUrl("/assets/img/Bilde_Kine.jpg"),
-          getBaseUrl("/assets/img/nature/IMG_0558.jpg"),
-          getBaseUrl("/assets/img/nature/IMG_0704.JPG"),
-          getBaseUrl("/assets/img/nature/IMG_2128.jpg"),
-          getBaseUrl("/assets/img/nature/IMG_4266.JPEG")
+          getBaseUrl("assets/img/Bilde_Kine.jpg"),
+          getBaseUrl("assets/img/nature/IMG_0558.jpg"),
+          getBaseUrl("assets/img/nature/IMG_0704.JPG"),
+          getBaseUrl("assets/img/nature/IMG_2128.jpg"),
+          getBaseUrl("assets/img/nature/IMG_4266.JPEG")
         ]
       : [
-          getBaseUrl("/assets/img/art/IMG_0220.JPG"),
-          getBaseUrl("/assets/img/art/2017.JPG"),
-          getBaseUrl("/assets/img/art/2015_4.JPG"),
-          getBaseUrl("/assets/img/art/2015_3.JPG"),
-          getBaseUrl("/assets/img/art/2015_2.JPG")
+          getBaseUrl("assets/img/art/IMG_0220.JPG"),
+          getBaseUrl("assets/img/art/2017.JPG"),
+          getBaseUrl("assets/img/art/2015_4.JPG"),
+          getBaseUrl("assets/img/art/2015_3.JPG"),
+          getBaseUrl("assets/img/art/2015_2.JPG")
         ];
   const fixedImage =
     direction === "left" ? "/assets/Art_mountain.svg" : "/assets/Art_paint.svg";

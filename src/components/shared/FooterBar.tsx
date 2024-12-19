@@ -30,7 +30,7 @@ const FooterBar = () => {
           <div className="flex flex-col justify-center items-center">
             <Link to="/" className="m-1.5 p-2">
               <img
-                src={getBaseUrl("/assets/KON_logo.svg")}
+                src={getBaseUrl("assets/KON_logo.svg")}
                 alt="Site logo"
                 className="filter invert w-20"
               />
