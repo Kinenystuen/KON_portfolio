@@ -48,7 +48,7 @@ const HeaderNav = () => {
       <div className="flex lg:flex-1 z-30">
         <Link to="/" className="m-1.5 p-2" onClick={() => setMenuOpen(false)}>
           <img
-            src={getBaseUrl("/assets/KON_logo.svg")}
+            src={getBaseUrl("assets/KON_logo.svg")}
             alt="Site logo"
             className="filter dark:invert"
           />

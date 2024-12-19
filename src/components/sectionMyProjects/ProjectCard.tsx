@@ -25,7 +25,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
     <>
       {/* Project Card */}
       <div
-        className="bg-white relative group rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-lg"
+        className="bg-white relative group rounded-sm shadow-md overflow-hidden cursor-pointer hover:shadow-lg"
         onClick={() => setIsModalOpen(true)}
         tabIndex={0}
         role="button"
@@ -35,10 +35,10 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
         <img
           src={getBaseUrl(image)}
           alt={name}
-          className="w-full h-80 object-cover"
+          className="w-full h-64 object-cover"
           onError={(e) => {
             (e.target as HTMLImageElement).src = getBaseUrl(
-              "/assets/Robot_builder.svg"
+              "assets/Robot_builder.svg"
             );
           }}
         />
@@ -53,38 +53,14 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div>
 
           {/* Hover Text */}
-          <div className="absolute top-[-20px] right-0 w-full flex justify-start"></div>
-        </div>
-      </div>
-      {/* Project Info */}
-      <div
-        className="flex justify-between gap-1 m-3"
-        onClick={() => setIsModalOpen(true)}
-      >
-        <div className="flex flex-col">
+          <div className="absolute top-[-20px] right-0 w-full flex justify-start">
+            <P className="text-white text-sm m-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
+              {type} - {year}
+            </P>
+          </div>
+
           {/* Project Title */}
-          <H3 className="text-xl sm:text-3xl font-bold cursor-pointer">
-            {name}
-          </H3>
-          <P className="text-xs sm:text-sm cursor-pointer">
-            {type} - {year}
-          </P>
-        </div>
-        <div className="my-auto hover:scale-110 transform duration-300 cursor-pointer m-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="size-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-            />
-          </svg>
+          <H3 className="relative text-white">{name}</H3>
         </div>
       </div>
 
@@ -106,7 +82,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
                 className="rounded-lg w-full h-full object-cover"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src =
-                    `${getBaseUrl("/assets/Robot_builder.svg")}`;
+                    `${getBaseUrl("assets/Robot_builder.svg")}`;
                 }}
               />
             </div>

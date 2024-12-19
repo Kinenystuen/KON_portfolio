@@ -23,7 +23,7 @@ const HeroText: React.FC = () => {
           opacity-10
           pointer-events-none
         "
-        src={getBaseUrl("/assets/KON_text.svg")}
+        src={getBaseUrl("assets/KON_text.svg")}
         alt="KON text svg"
       />
 
