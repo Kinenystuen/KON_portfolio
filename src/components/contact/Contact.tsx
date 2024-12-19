@@ -144,12 +144,18 @@ function Contact() {
                 },
                 maxLength: {
                   value: 1000,
-                  message: "Maximum length is 2000 characters."
+                  message: "Maximum length is 1000 characters."
                 }
               })}
               placeholder=" "
-              className="peer cursor-pointer w-full h-fit p-2 pt-5 pb-2 border bg-customBg border-gray-300 dark:border-customBgDark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-color4-700 focus:border-color4-600 dark:bg-customBgDark-500 dark:text-whiteFont-600"
+              className="peer cursor-pointer w-full p-2 px-3 pt-5 pb-2 border bg-customBg border-gray-300 dark:border-customBgDark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-color4-700 focus:border-color4-600 dark:bg-customBgDark-500 dark:text-whiteFont-600 resize-none overflow-hidden"
+              onInput={(e) => {
+                const target = e.target as HTMLTextAreaElement;
+                target.style.height = "auto";
+                target.style.height = `${target.scrollHeight}px`;
+              }}
             />
+
             <label
               htmlFor="message"
               className="absolute rounded-md left-3 top-[-8px] text-gray-500 dark:text-whiteFont-700 bg-customBg text-sm dark:bg-customBgDark-500 px-1 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-[-8px] peer-focus:text-sm peer-focus:text-color4-800 dark:peer-focus:text-whiteFont-600"
