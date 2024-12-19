@@ -12,12 +12,12 @@ const FooterBar = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
-        className="fill-color3 dark:fill-customDarkBlueDark"
+        className="fill-color3 dark:fill-customBgDark-900"
       >
         <path d="M1280 11C1280 11 502.5 46 0 0.5V46H1280V11Z" />
       </svg>
 
-      <div className="bg-color3 dark:bg-customDarkBlueDark p-16 flex gap-0 justify-center">
+      <div className="bg-color3 dark:bg-customBgDark-900 p-16 flex gap-0 justify-center">
         {/* Copy Right Section */}
         <div className="flex-1 justify-start content-center">
           <p className="text-center md:text-start p-2 mb-4 text-sm text-whiteFont-200 dark:text-whiteFont-500">
