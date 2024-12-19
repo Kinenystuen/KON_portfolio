@@ -25,7 +25,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
     <>
       {/* Project Card */}
       <div
-        className="bg-white relative group rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-lg"
+        className="bg-white dark:bg-customBgDark-500 relative group rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-lg"
         onClick={() => setIsModalOpen(true)}
         tabIndex={0}
         role="button"
@@ -91,19 +91,18 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
       {/* Modal */}
       {isModalOpen && (
         <Modal
-          title={name}
           opacity="bg-opacity-80"
-          className="max-w-screen-lg animate-fadeInScale"
+          className="animate-fadeInScale"
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         >
-          <div className="flex flex-col lg:flex-row items-start gap-3 sm:h-[50vh] mb-5">
+          <div className="flex flex-col lg:flex-row items-start gap-3 sm:h-[65vh] my-4">
             {/* Left Column: Image */}
             <div className="lg:w-2/3 h-full shadow-xl">
               <img
                 src={getBaseUrl(image)}
                 alt={name}
-                className="rounded-lg w-full h-full object-cover"
+                className="rounded-lg w-full h-full mx-2 object-cover shadow-lg"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src =
                     `${getBaseUrl("assets/Robot_builder.svg")}`;
@@ -112,33 +111,31 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
             </div>
 
             {/* Right Column: Details */}
-            <div>
-              <div className="text-sm text-gray-500">
-                <span className="font-semibold">{`Project Type: ${type}`}</span>
+            <div className="m-2 py-2">
+              <div className="text-sm dark:text-whiteFont-600 ">
+                <span className="font-semibold">{`${type}`}</span>
               </div>
               <H3 className="font-bold font-header text-3xl mb-4">{name}</H3>
-              <P className="text-gray-700 mb-6">{description}</P>
+              <P className="mb-5">{description}</P>
 
               {/* Links */}
-              <div className="flex flex-col space-y-4">
-                <div className="flex space-x-4">
-                  <a
-                    href={githubRepo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button px-4 py-2 bg-transparent text-customGreen-1000 hover:text-black hover:bg-customGreen border-customGreen hover:border-customGreen border-2 rounded-lg"
-                  >
-                    GitHub Repo
-                  </a>
-                  <a
-                    href={liveSite}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button px-4 py-2 bg-transparent text-customGreen-1000 hover:text-black hover:bg-customGreen border-customGreen hover:border-customGreen border-2 rounded-lg"
-                  >
-                    Live Site
-                  </a>
-                </div>
+              <div className="flex justify-between sm:justify-start gap-3 ">
+                <a
+                  href={githubRepo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button rounded transition duration-300 ease-in-out bg-gray-500 text-white hover:bg-gray-600 hover:text-white dark:bg-violet-900 dark:hover:bg-violet-800 dark:text-gray-100 border dark:border-violet-900"
+                >
+                  GitHub Repo
+                </a>
+                <a
+                  href={liveSite}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button rounded transition duration-300 ease-in-out bg-gray-500 text-white hover:bg-gray-600 hover:text-white dark:bg-violet-900 dark:hover:bg-violet-800 dark:text-gray-100 border dark:border-violet-900"
+                >
+                  Live Site
+                </a>
               </div>
             </div>
           </div>
