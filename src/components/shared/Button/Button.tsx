@@ -12,17 +12,13 @@ function Button({
   let buttonClass = "";
 
   switch (buttonType) {
-    case "green":
-      buttonClass =
-        "bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700 text-white";
-      break;
     case "blue":
       buttonClass =
         "bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white";
       break;
-    case "red":
+    case "violet":
       buttonClass =
-        "bg-red-500 hover:bg-red-600 dark:bg-red-500 dark:hover:bg-red-600 text-white";
+        "bg-color4-600 hover:bg-color4-700 dark:bg-blue-800 dark:hover:bg-blue-900 border-none text-white";
       break;
     case "transparent":
       buttonClass =
