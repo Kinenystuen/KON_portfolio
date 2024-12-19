@@ -1,8 +1,8 @@
+import ContactSection from "../../components/contact/ThisContactSection";
 import InterestsSection from "../../components/interestsSection/InterestsSection";
 import KnowledgeSection from "../../components/knowledgeSection/KnowledgeSection";
 import MyProjects from "../../components/sectionMyProjects/MyProjects";
 import AnimatedHeader from "./AnimatedHeader";
-import ContactSection from "../../components/contact/contactSection";
 
 const Home = () => {
   return (
