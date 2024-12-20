@@ -55,7 +55,7 @@ const Modal: React.FC<ModalProps> = ({
       onClick={onClose}
     >
       <div
-        className={` bg-customBg dark:bg-customBgDark-500 rounded-lg shadow-lg w-full max-w-screen-sm lg:max-w-screen-lg overflow-y-auto p-4 relative ${className}`}
+        className={` bg-customBg dark:bg-customBgDark-500 rounded-lg shadow-lg w-full max-w-screen-sm lg:max-w-screen-lg 2xl:max-w-screen-2xl overflow-y-auto p-4 relative ${className}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
