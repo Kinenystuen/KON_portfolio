@@ -11,6 +11,7 @@ function App() {
         {/* Public routes */}
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
+          <Route path="gallery" element={<PageGallery />} />
           <Route path="gallery/:id" element={<PageGallery />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>

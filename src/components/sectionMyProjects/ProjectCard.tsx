@@ -22,10 +22,10 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
   const { name, description, year, type, image, githubRepo, liveSite } = data;
 
   return (
-    <>
+    <div className="cursor-pointer group ">
       {/* Project Card */}
       <div
-        className="bg-white relative group rounded-sm shadow-md overflow-hidden cursor-pointer hover:shadow-lg"
+        className="bg-white dark:bg-customBgDark-500 relative rounded-xl shadow-md overflow-hidden  hover:shadow-lg"
         onClick={() => setIsModalOpen(true)}
         tabIndex={0}
         role="button"
@@ -35,7 +35,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
         <img
           src={getBaseUrl(image)}
           alt={name}
-          className="w-full h-64 object-cover"
+          className="w-full h-80 object-cover"
           onError={(e) => {
             (e.target as HTMLImageElement).src = getBaseUrl(
               "assets/Robot_builder.svg"
@@ -53,33 +53,54 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div>
 
           {/* Hover Text */}
-          <div className="absolute top-[-20px] right-0 w-full flex justify-start">
-            <P className="text-white text-sm m-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-              {type} - {year}
-            </P>
-          </div>
-
+          <div className="absolute top-[-20px] right-0 w-full flex justify-start"></div>
+        </div>
+      </div>
+      {/* Project Info */}
+      <div
+        className="flex justify-between gap-1 m-3 group"
+        onClick={() => setIsModalOpen(true)}
+      >
+        <div className="flex flex-col ">
           {/* Project Title */}
-          <H3 className="relative text-white">{name}</H3>
+          <H3 className="text-xl sm:text-3xl font-bold ">{name}</H3>
+          <P className="text-xs sm:text-sm ">
+            {type} - {year}
+          </P>
+        </div>
+        <div className="my-auto group-hover:scale-125 transform duration-300  m-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+            />
+          </svg>
         </div>
       </div>
 
       {/* Modal */}
       {isModalOpen && (
         <Modal
-          title={name}
           opacity="bg-opacity-80"
-          className="max-w-screen-lg animate-fadeInScale"
+          className="animate-fadeInScale cursor-default"
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         >
-          <div className="flex flex-col lg:flex-row items-start gap-3 sm:h-[50vh] mb-5">
+          <div className="flex flex-col lg:flex-row items-start gap-3 sm:h-[65vh] my-4">
             {/* Left Column: Image */}
             <div className="lg:w-2/3 h-full shadow-xl">
               <img
                 src={getBaseUrl(image)}
                 alt={name}
-                className="rounded-lg w-full h-full object-cover"
+                className="rounded-lg w-full h-full mx-2 object-cover shadow-lg "
                 onError={(e) => {
                   (e.target as HTMLImageElement).src =
                     `${getBaseUrl("assets/Robot_builder.svg")}`;
@@ -88,39 +109,37 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
             </div>
 
             {/* Right Column: Details */}
-            <div>
-              <div className="text-sm text-gray-500">
-                <span className="font-semibold">{`Project Type: ${type}`}</span>
+            <div className="m-2 py-2">
+              <div className="text-sm dark:text-whiteFont-600 ">
+                <span className="font-semibold">{`${type}`}</span>
               </div>
               <H3 className="font-bold font-header text-3xl mb-4">{name}</H3>
-              <P className="text-gray-700 mb-6">{description}</P>
+              <P className="mb-5">{description}</P>
 
               {/* Links */}
-              <div className="flex flex-col space-y-4">
-                <div className="flex space-x-4">
-                  <a
-                    href={githubRepo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button px-4 py-2 bg-transparent text-customGreen-1000 hover:text-black hover:bg-customGreen border-customGreen hover:border-customGreen border-2 rounded-lg"
-                  >
-                    GitHub Repo
-                  </a>
-                  <a
-                    href={liveSite}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button px-4 py-2 bg-transparent text-customGreen-1000 hover:text-black hover:bg-customGreen border-customGreen hover:border-customGreen border-2 rounded-lg"
-                  >
-                    Live Site
-                  </a>
-                </div>
+              <div className="flex justify-between sm:justify-start gap-3 ">
+                <a
+                  href={githubRepo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button rounded transition duration-300 ease-in-out bg-gray-500 text-white hover:bg-gray-600 hover:text-white dark:bg-violet-900 dark:hover:bg-violet-800 dark:text-gray-100 border dark:border-violet-900"
+                >
+                  GitHub Repo
+                </a>
+                <a
+                  href={liveSite}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button rounded transition duration-300 ease-in-out bg-gray-500 text-white hover:bg-gray-600 hover:text-white dark:bg-violet-900 dark:hover:bg-violet-800 dark:text-gray-100 border dark:border-violet-900"
+                >
+                  Live Site
+                </a>
               </div>
             </div>
           </div>
         </Modal>
       )}
-    </>
+    </div>
   );
 };
 

@@ -1,3 +1,4 @@
+import Button from "../../components/shared/Button/Button";
 import ErrorMessage from "../../components/shared/ErrorMessage";
 import { Link } from "react-router-dom";
 
@@ -5,11 +6,8 @@ const PageNotFound = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <ErrorMessage message="404 Page not found">
-        <Link
-          to="/"
-          className="button m-1.5 p-2 hover:bg-transparent rounded-lg px-4 hover:border-gray-800 border-2 border-customGreen-700 bg-customGreen text-gray-800 hover:text-black font-bold"
-        >
-          Go back to homepage
+        <Link to="/" className="m-1.5 p-2 hover:bg-transparent rounded-lg px-4">
+          <Button>Go back to homepage</Button>
         </Link>
       </ErrorMessage>
     </div>

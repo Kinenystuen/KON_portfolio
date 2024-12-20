@@ -7,6 +7,7 @@ function Button({
   title,
   ariaLabel,
   buttonType,
+  disabled,
   type
 }: ButtonProps) {
   let buttonClass = "";
@@ -18,7 +19,7 @@ function Button({
       break;
     case "violet":
       buttonClass =
-        "bg-color4-600 hover:bg-color4-700 dark:bg-blue-800 dark:hover:bg-blue-900 border-none text-white";
+        "bg-color4-600 hover:bg-color4-700 border-none text-white border text-white hover:text-white dark:bg-violet-900 dark:hover:bg-violet-800 dark:text-gray-100 border dark:border-violet-900";
       break;
     case "transparent":
       buttonClass =
@@ -26,7 +27,7 @@ function Button({
       break;
     default:
       buttonClass =
-        "bg-gray-500 text-white hover:bg-gray-600 dark:bg-BtnColor dark:hover:bg-BtnColor-400";
+        "bg-gray-500 text-black dark:bg-BtnColor dark:hover:bg-BtnColor-400";
   }
 
   return (
@@ -35,6 +36,7 @@ function Button({
       title={title}
       aria-label={ariaLabel}
       type={type}
+      disabled={disabled}
       className={`button rounded transition duration-300 ease-in-out ${buttonClass} ${className}`}
     >
       {children}

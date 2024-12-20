@@ -70,7 +70,7 @@ const PageGallery = () => {
   };
 
   return (
-    <Section className="container mt-0 relative bg-customBg">
+    <Section className="container mt-0 relative bg-customBg pt-0">
       <Breadcrumb items={breadcrumbItems} />
       <div className="flex items-center justify-between mb-6 ">
         <H2 className="font-bold text-2xl uppercase">{headerTitle} gallery</H2>

@@ -41,7 +41,7 @@ const Input: React.FC<InputProps> = ({
             : undefined
         })}
         placeholder=" "
-        className="peer cursor-pointer w-full p-2 pt-5 pb-2 border border-gray-300 dark:border-customBgDark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-color4-700 focus:border-color4-600"
+        className="peer cursor-pointer w-full p-2 px-3 pt-5 pb-2 border border-gray-300 dark:border-customBgDark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-color4-700 focus:border-color4-600"
       />
 
       {/* Label */}
