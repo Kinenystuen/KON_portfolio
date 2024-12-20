@@ -7,6 +7,7 @@ function Button({
   title,
   ariaLabel,
   buttonType,
+  disabled,
   type
 }: ButtonProps) {
   let buttonClass = "";
@@ -35,6 +36,7 @@ function Button({
       title={title}
       aria-label={ariaLabel}
       type={type}
+      disabled={disabled}
       className={`button rounded transition duration-300 ease-in-out ${buttonClass} ${className}`}
     >
       {children}
