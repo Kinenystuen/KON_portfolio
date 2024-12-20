@@ -22,10 +22,10 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
   const { name, description, year, type, image, githubRepo, liveSite } = data;
 
   return (
-    <>
+    <div className="cursor-pointer group ">
       {/* Project Card */}
       <div
-        className="bg-white dark:bg-customBgDark-500 relative group rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-lg"
+        className="bg-white dark:bg-customBgDark-500 relative rounded-xl shadow-md overflow-hidden  hover:shadow-lg"
         onClick={() => setIsModalOpen(true)}
         tabIndex={0}
         role="button"
@@ -58,19 +58,17 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
       </div>
       {/* Project Info */}
       <div
-        className="flex justify-between gap-1 m-3"
+        className="flex justify-between gap-1 m-3 group"
         onClick={() => setIsModalOpen(true)}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col ">
           {/* Project Title */}
-          <H3 className="text-xl sm:text-3xl font-bold cursor-pointer">
-            {name}
-          </H3>
-          <P className="text-xs sm:text-sm cursor-pointer">
+          <H3 className="text-xl sm:text-3xl font-bold ">{name}</H3>
+          <P className="text-xs sm:text-sm ">
             {type} - {year}
           </P>
         </div>
-        <div className="my-auto hover:scale-110 transform duration-300 cursor-pointer m-1">
+        <div className="my-auto group-hover:scale-125 transform duration-300  m-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -92,7 +90,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
       {isModalOpen && (
         <Modal
           opacity="bg-opacity-80"
-          className="animate-fadeInScale"
+          className="animate-fadeInScale cursor-default"
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         >
@@ -102,7 +100,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
               <img
                 src={getBaseUrl(image)}
                 alt={name}
-                className="rounded-lg w-full h-full mx-2 object-cover shadow-lg"
+                className="rounded-lg w-full h-full mx-2 object-cover shadow-lg "
                 onError={(e) => {
                   (e.target as HTMLImageElement).src =
                     `${getBaseUrl("assets/Robot_builder.svg")}`;
@@ -141,7 +139,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
           </div>
         </Modal>
       )}
-    </>
+    </div>
   );
 };
 
