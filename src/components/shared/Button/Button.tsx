@@ -27,7 +27,7 @@ function Button({
       break;
     default:
       buttonClass =
-        "bg-gray-500 text-white hover:bg-gray-600 dark:bg-BtnColor dark:hover:bg-BtnColor-400";
+        "bg-gray-500 text-black dark:bg-BtnColor dark:hover:bg-BtnColor-400";
   }
 
   return (
