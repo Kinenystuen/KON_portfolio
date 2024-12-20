@@ -71,6 +71,7 @@ button:focus-visible {
   font-family: "nunito", system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   --color: #213547;
+  --font-color: #000;
   --background-color: #f7f9fa;
   --hover-color: #747bff;
   --button-bg: #f9f9f9;

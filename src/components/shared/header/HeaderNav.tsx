@@ -86,19 +86,22 @@ const HeaderNav = () => {
       <nav
         className={`fixed left-0 top-0 w-full  shadow-md lg:relative lg:w-auto lg:me-2 lg:bg-transparent lg:shadow-none lg:max-h-none lg:overflow-visible transition-all duration-300 overflow-hidden ${
           menuOpen
-            ? "z-0 max-h-screen pt-[2.5rem]"
+            ? "z-0 max-h-screen pt-[2.5rem] bg-customBg dark:bg-customBgDark"
             : "-z-10 max-h-0 lg:z-auto lg:max-h-none"
         }`}
       >
         <ul
-          className={`flex flex-col lg:flex-row lg:items-center lg:justify-center lg:content-center gap-2 lg:gap-2 m-2 mt-10 mb-5 lg:m-0 lg:p-0 transition-transform lg:-translate-y-0 duration-300 ${
-            menuOpen ? "translate-y-0" : "-translate-y-full"
+          className={`flex flex-col lg:flex-row lg:items-center lg:justify-center lg:content-center gap-2 lg:gap-2 m-2 mx-4 mt-10 mb-5 lg:m-0 lg:p-0 transition-transform lg:-translate-y-0 duration-300 ${
+            menuOpen ? "translate-y-0 " : "-translate-y-full"
           }`}
         >
           {headerNavLinks.map((link: INavLink) => {
             const isActive = pathname === link.route;
             return (
-              <li key={link.label} className="relative">
+              <li
+                key={link.label}
+                className="relative h-10 border-b border-customBgDark-600 py-1 hover:border-color4-500 dark:hover:border-color4-800"
+              >
                 <NavLink
                   to={link.route}
                   onClick={() => setMenuOpen(false)}
