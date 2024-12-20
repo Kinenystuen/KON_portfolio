@@ -38,7 +38,7 @@ function Contact() {
 
     await submitForm(data, () => {
       setIsSubmitted(true);
-      console.log("Form submitted successfully");
+      // console.log("Form submitted successfully");
       reset();
     });
   };

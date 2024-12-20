@@ -33,8 +33,6 @@ const Dropdown: React.FC<DropdownProps> = ({ label, items }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  console.log(location.pathname);
-  console.log(items.map((item) => item.href));
 
   return (
     <div ref={dropdownRef} className="relative inline-block text-left">
