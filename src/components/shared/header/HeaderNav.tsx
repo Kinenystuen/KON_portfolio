@@ -100,7 +100,7 @@ const HeaderNav = () => {
             return (
               <li
                 key={link.label}
-                className="relative h-10 border-b border-customBgDark-600 py-1 hover:border-color4-500 dark:hover:border-color4-800"
+                className="relative py-2  border-b border-customBgDark-600 lg:py-1 hover:border-color4-500 dark:hover:border-color4-800 lg:border-none "
               >
                 <NavLink
                   to={link.route}
