@@ -102,9 +102,9 @@ const HeaderNav = () => {
                 <NavLink
                   to={link.route}
                   onClick={() => setMenuOpen(false)}
-                  className={`relative m-2 text-gray-800 hover:text-black dark:text-whiteFont-600 dark:hover:text-whiteFont-500  uppercase lg:flex lg:items-center py-2 px-3 text-sm font-semibold transition-all duration-300 ${
+                  className={`relative m-2 text-gray-600 hover:text-black dark:text-whiteFont-600 dark:hover:text-whiteFont-500  uppercase lg:flex lg:items-center py-2 px-3 text-sm font-semibold transition-all duration-300 ${
                     isActive
-                      ? "text-black dark:text-whiteFont-400 cursor-default"
+                      ? "text-black hover:text-inherit dark:text-whiteFont-400 cursor-default"
                       : ""
                   }`}
                 >
