@@ -61,8 +61,8 @@ const Dropdown: React.FC<DropdownProps> = ({ label, items }) => {
       </Button>
 
       {isOpen && (
-        <div className="absolute z-10 mt-2 bg-white divide-y divide-gray-100 rounded-md shadow w-44 dark:bg-gray-700">
-          <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+        <div className="absolute z-10 mt-2 bg-white rounded-md shadow w-44 dark:bg-gray-700">
+          <ul className="py-2 text-sm">
             {items.map((item, index) => (
               <li key={index} className="border-y border-gray-600">
                 <Button
@@ -73,9 +73,9 @@ const Dropdown: React.FC<DropdownProps> = ({ label, items }) => {
                     setIsOpen(false);
                   }}
                   disabled={location.pathname === item.href}
-                  className={`w-full text-left block px-4 py-2 bg-transparent hover:rounded-none border-0 text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                  className={`w-full text-left block px-4 py-2 bg-transparent border-0 hover:bg-gray-200 dark:hover:bg-gray-600 ${
                     location.pathname === item.href
-                      ? "cursor-not-allowed text-gray-500 dark:text-gray-400 pointer-events-none"
+                      ? "text-customBgDark-300 pointer-events-none"
                       : ""
                   }`}
                 >
