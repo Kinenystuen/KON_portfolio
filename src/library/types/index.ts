@@ -22,6 +22,7 @@ export type ButtonProps = {
   className?: string;
   title?: string;
   ariaLabel?: string;
+  disabled?: boolean;
   buttonType?: "violet" | "blue" | "transparent";
   type?: "button" | "submit" | "reset";
 };
@@ -38,4 +39,19 @@ export interface Gallery {
     url: string;
     alt: string;
   };
+}
+
+/* BreadCrumb props */
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+  current?: boolean;
+  isDropdown?: boolean;
+  dropdownItems?: { label: string; href?: string }[];
+}
+
+export interface BreadcrumbProps {
+  items: BreadcrumbItem[];
+  goBack?: boolean;
+  className?: string;
 }
