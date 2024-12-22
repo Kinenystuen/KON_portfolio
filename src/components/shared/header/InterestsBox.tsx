@@ -39,7 +39,7 @@ const InterestsBox: React.FC<InterestsBoxProps> = ({
       break;
     default:
       gradientClass =
-        "from-color4-300 to-secondary-500 dark:from-customBgDark-600 dark:to-customBgDark-700 text-white";
+        "from-color4-300 to-secondary-500 dark:from-violet-900 dark:to-color4-900 text-white";
   }
 
   return (
