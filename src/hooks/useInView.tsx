@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const useInView = (threshold: number = 0.1) => {
-  const elementRef = useRef<HTMLElement | null>(null);
+  const elementRef = useRef<HTMLDivElement | null>(null); // Updated typing
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
