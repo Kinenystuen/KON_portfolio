@@ -116,8 +116,8 @@ button:focus-visible {
   --svg-fill-light: #0a0f1d;
   --customGreen: #4a5d46;
   --customGreenLight: #7d9079;
-  --color4: #182d38;
-  --color4Light: #1e485c;
+  --color4: #2e1065;
+  --color4Light: #4c1d95;
 
   /* Use dark mode autofill colors */
   --autofill-bg-color: var(--background-color);
