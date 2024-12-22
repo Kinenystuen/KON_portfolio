@@ -11,7 +11,6 @@ interface ProjectCardProps {
   description: string;
   year: number;
   type: string;
-  categoryType: string;
   image: string;
   githubRepo: string;
   liveSite: string;
@@ -20,16 +19,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const {
-    name,
-    description,
-    year,
-    type,
-    categoryType,
-    image,
-    githubRepo,
-    liveSite
-  } = data;
+  const { name, description, year, type, image, githubRepo, liveSite } = data;
 
   return (
     <div className="cursor-pointer group ">
