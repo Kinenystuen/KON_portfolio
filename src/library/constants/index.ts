@@ -23,12 +23,12 @@ export const socialMedia = [
     id: 1,
     platform: "Instagram",
     icon: faInstagram,
-    link: "#"
+    link: "https://www.instagram.com/kinenystuen/"
   },
   {
     id: 2,
     platform: "LinkedIn",
     icon: faLinkedin,
-    link: "#"
+    link: "https://www.linkedin.com/in/kine-odden-nystuen-208744223/"
   }
 ];
