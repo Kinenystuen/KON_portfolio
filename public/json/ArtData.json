@@ -1,50 +1,129 @@
 [
   {
     "id": 1,
+    "description": "Juleinspirert maleri. Motiv Varden, Kvittjønnan",
     "image": {
-      "url": "assets/img/art/2015_2.JPG",
-      "alt": "Prosjekt: Modernisering av kjent maleri 'Kvitebjørn kong Valemon'"
+      "url": "assets/img/art/2017.JPG",
+      "alt": "Christmas inspired painting. Motive Varden, Kvittjønnan"
     }
   },
   {
     "id": 2,
+    "description": "Sau",
     "image": {
-      "url": "assets/img/art/2015_3.jpg",
+      "url": "assets/img/art/sau.JPEG",
       "alt": ""
     }
   },
   {
     "id": 3,
+    "description": "Fjellbiene logo maleri",
     "image": {
-      "url": "assets/img/art/2015_4.JPG",
-      "alt": ""
+      "url": "assets/img/art/Fjellbiene_paint_logo.jpg",
+      "alt": "Fjellbiene logo painting"
     }
   },
   {
     "id": 4,
+    "description": "Kili tegning, hobbiten",
     "image": {
-      "url": "assets/img/art/2015_6.JPG",
+      "url": "assets/img/art/IMG_0220.JPG",
       "alt": ""
     }
   },
   {
     "id": 5,
+    "description": "Stein maleri mot Snøhetta",
     "image": {
-      "url": "assets/img/art/2017.JPG",
-      "alt": "Juleinspirert maleri. Motiv Varden, Kvittjønnan"
+      "url": "assets/img/art/2019.JPEG",
+      "alt": ""
     }
   },
   {
     "id": 6,
+    "description": "Lemen. phd",
     "image": {
-      "url": "assets/img/art/Bier1.jpg",
-      "alt": "Fjellbiene logo maleri"
+      "url": "assets/img/art/image.png",
+      "alt": "Norwegian lemming, used in pHd thesis"
     }
   },
   {
     "id": 7,
+    "description": "Beitende sau. phd",
     "image": {
-      "url": "assets/img/art/IMG_0220.JPG",
+      "url": "assets/img/art/Sau_beite.png",
+      "alt": ""
+    }
+  },
+  {
+    "id": 8,
+    "description": "Beite forskning. phd",
+    "image": {
+      "url": "assets/img/art/beite_forskning.png",
+      "alt": ""
+    }
+  },
+  {
+    "id": 9,
+    "description": "Maleri, feltarbeid vandring",
+    "image": {
+      "url": "assets/img/art/IMG_8875.JPEG",
+      "alt": ""
+    }
+  },
+  {
+    "id": 10,
+    "description": "Maleri, feltarbeid pause, sitt",
+    "image": {
+      "url": "assets/img/art/IMG_8876.JPEG",
+      "alt": ""
+    }
+  },
+  {
+    "id": 11,
+    "description": "Maleri, feltarbeid pause, står",
+    "image": {
+      "url": "assets/img/art/IMG_9061.JPEG",
+      "alt": ""
+    }
+  },
+  {
+    "id": 12,
+    "description": "Prosjekt: Modernisering av kjent maleri 'Kvitebjørn Kong Valemon'",
+    "image": {
+      "url": "assets/img/art/2015_2.JPG",
+      "alt": "Project: Modernization of the famous painting 'The White Bear King Valemon'"
+    }
+  },
+  {
+    "id": 13,
+    "description": "Julekort 1",
+    "image": {
+      "url": "assets/img/art/Julekort1.jpg",
+      "alt": "Christmas card painting"
+    }
+  },
+  {
+    "id": 14,
+    "description": "Julekort 2",
+    "image": {
+      "url": "assets/img/art/Julekort2.svg",
+      "alt": "Christmas card painting"
+    }
+  },
+  {
+    "id": 15,
+    "description": "Vgs prosjekt 3 farger",
+    "image": {
+      "url": "assets/img/art/2016.JPEG",
+      "alt": ""
+    }
+  },
+  {
+    "id": 16,
+    "description": "Johnny Depp",
+    "image": {
+      "url": "assets/img/art/2015_3.jpg",
       "alt": ""
     }
   }
