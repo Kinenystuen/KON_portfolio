@@ -73,9 +73,9 @@ const Dropdown: React.FC<DropdownProps> = ({ label, items }) => {
                     setIsOpen(false);
                   }}
                   disabled={location.pathname === item.href}
-                  className={`w-full text-left block px-4 py-2 bg-transparent border-0 hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                  className={`w-full text-left block px-4 py-2 bg-transparent border-0 hover:bg-gray-200 dark:text-whiteFont-500 dark:hover:bg-gray-600 ${
                     location.pathname === item.href
-                      ? "text-customBgDark-300 pointer-events-none"
+                      ? "text-customBgDark-300 pointer-events-none dark:text-whiteFont-600"
                       : ""
                   }`}
                 >
