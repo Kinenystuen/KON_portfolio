@@ -11,6 +11,7 @@ interface ProjectCardProps {
   description: string;
   year: number;
   type: string;
+  categoryType: string;
   image: string;
   githubRepo: string;
   liveSite: string;
@@ -19,7 +20,16 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { name, description, year, type, image, githubRepo, liveSite } = data;
+  const {
+    name,
+    description,
+    year,
+    type,
+    categoryType,
+    image,
+    githubRepo,
+    liveSite
+  } = data;
 
   return (
     <div className="cursor-pointer group ">
@@ -63,7 +73,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
       >
         <div className="flex flex-col ">
           {/* Project Title */}
-          <H3 className="text-xl sm:text-3xl font-bold ">{name}</H3>
+          <H3 className="text-xl sm:text-3xl font-bold text-wrap">{name}</H3>
           <P className="text-xs sm:text-sm ">
             {type} - {year}
           </P>
