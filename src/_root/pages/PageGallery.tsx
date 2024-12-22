@@ -70,12 +70,12 @@ const PageGallery = () => {
   };
 
   return (
-    <Section className="container mt-0 relative bg-customBg pt-0">
+    <Section className="container mt-0 relative bg-customBg pt-0 max-w-6xl">
       <Breadcrumb items={breadcrumbItems} />
       <div className="flex items-center justify-between mb-6 ">
         <H2 className="font-bold text-2xl uppercase">{headerTitle} gallery</H2>
       </div>
-      <div className="masonry-container columns-2 sm:columns-3 md:columns-5 gap-2">
+      <div className="masonry-container columns-2 sm:columns-3 md:columns-4 gap-4">
         {data.map((galleryItem, index) => (
           <div
             key={galleryItem.id}
@@ -110,16 +110,16 @@ const PageGallery = () => {
           onClose={() => setIsModalOpen(false)}
         >
           <div className="relative">
-            <div className="flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center max-w-full h-[90vh]">
               <img
                 src={getBaseUrl(data[currentImageIndex].image.url)}
                 alt={data[currentImageIndex].image.alt}
-                className="h-auto max-w-full max-h-[90vh] rounded-sm shadow-md object-contain"
+                className="h-full rounded-sm shadow-md object-contain"
               />
               {data[currentImageIndex].image.alt && (
-                <p className="absolute bottom-[-3rem] text-white bg-black bg-opacity-60 p-2 rounded-sm">
+                <P className="text-white bg-black bg-opacity-60 p-2 mt-1 rounded-sm">
                   {data[currentImageIndex].image.alt}
-                </p>
+                </P>
               )}
             </div>
           </div>
