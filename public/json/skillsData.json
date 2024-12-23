@@ -40,5 +40,33 @@
     "alt": "github",
     "link": "https://github.com/",
     "id": "6"
+  },
+  {
+    "name": "Bootstrap",
+    "image": "https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg",
+    "alt": "bootstrap logo",
+    "link": "https://getbootstrap.com/",
+    "id": "7"
+  },
+  {
+    "name": "Tailwind",
+    "image": "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/31/tailwind.png",
+    "alt": "tailwind logo",
+    "link": "https://tailwindui.com/",
+    "id": "8"
+  },
+  {
+    "name": "React",
+    "image": "https://static-00.iconduck.com/assets.00/react-icon-512x512-u6e60ayf.png",
+    "alt": "React",
+    "link": "https://react.dev/",
+    "id": "9"
+  },
+  {
+    "name": "Vite",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
+    "alt": "Vite",
+    "link": "https://vite.dev/",
+    "id": "10"
   }
 ]
