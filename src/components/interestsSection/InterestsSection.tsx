@@ -17,7 +17,7 @@ const InterestsSection = () => {
             imgPosition="left-4"
           />
           <InterestsBox
-            title="Hiking"
+            title="Nature"
             image="assets/Art_mountain.svg"
             link="/gallery/nature"
           />
