@@ -90,7 +90,7 @@ const AnimatedHeader: React.FC = () => {
   const { bounceScale, translateY, scale2 } = calculateBounceTransform();
 
   return (
-    <div className="relative w-full h-[250vh] overflow-hidden">
+    <div className="relative w-full h-[220vh] overflow-hidden dark:bg-gradient-to-tr dark:from-[#8284AE ] dark:to-[#7578A8]">
       <H1
         className="absolute left-1/2 text-2xl  sm:text-2xl md:text-4xl font-bold text-center transition-all duration-300 ease-out z-10"
         style={{
@@ -143,7 +143,7 @@ const AnimatedHeader: React.FC = () => {
 
             {/* Overlay */}
             <div
-              className={`absolute inset-0 dark:bg-black dark:opacity-40 animate duration-700 ${isInView ? "dark:opacity-80" : ""} pointer-events-none`}
+              className={`absolute inset-0 dark:bg-black dark:opacity-20 animate duration-700 ${isInView ? "dark:opacity-70" : ""} pointer-events-none`}
             ></div>
           </div>
         </div>
@@ -189,10 +189,10 @@ const AnimatedHeader: React.FC = () => {
               <span className="text-violet-600 dark:text-violet-300 ms-2">
                 Kine
               </span>
-              , a front-end developer and artist passionate about crafting
+              , a Front-end Developer and artist passionate about crafting
               <span className="text-violet-600 dark:text-violet-400">
                 {" "}
-                beautiful websites.
+                intuitive and user-friendly websites.
               </span>
             </P>
           </div>
