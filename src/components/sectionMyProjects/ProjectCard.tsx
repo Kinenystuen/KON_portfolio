@@ -94,9 +94,9 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         >
-          <div className="flex flex-col lg:flex-row items-start gap-3 sm:h-[65vh] my-4">
+          <div className="flex  flex-col lg:flex-row items-start gap-3 sm:h-[65vh] my-4">
             {/* Left Column: Image */}
-            <div className="lg:w-2/3 h-full shadow-xl">
+            <div className="flex-1 lg:w-2/3 h-full shadow-xl">
               <img
                 src={getBaseUrl(image)}
                 alt={name}
@@ -109,7 +109,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
             </div>
 
             {/* Right Column: Details */}
-            <div className="m-2 py-2">
+            <div className="flex-1 m-2 py-2">
               <div className="text-sm dark:text-whiteFont-600 ">
                 <span className="font-semibold">{`${type}`}</span>
               </div>

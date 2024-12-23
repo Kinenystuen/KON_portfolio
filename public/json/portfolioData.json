@@ -15,7 +15,7 @@
     "name": "Community Science Museum",
     "description": "A HTML & CSS website for a fictional museum for kids.",
     "year": 2023,
-    "type": "Semester project",
+    "type": "Semester project 1",
     "categoryType": "fictional museum",
     "image": "assets/img/CSM_semester_project.png",
     "githubRepo": "https://github.com/Kinenystuen/CommunityScienceMuseum_sp1",
@@ -31,5 +31,16 @@
     "image": "assets/img/Homepage_MountainLife.png",
     "githubRepo": "https://github.com/Noroff-FEU-Assignments/project-exam-1-Kinenystuen",
     "liveSite": "https://mountainlife.netlify.app/"
+  },
+  {
+    "id": 4,
+    "name": "ActionHub",
+    "description": "Auction Hub is a fictional online auction platform built using HTML, SCSS/CSS, JavaScript, Bootstrap and Vite. Users can explore and bid on various items, from antiques to electronics, while sellers can easily list their products. The platform offers an exciting real-time bidding experience, with new users receiving 1,000 credits to kickstart their journey.",
+    "year": 2024,
+    "type": "Semester project 2",
+    "categoryType": "Fictional online auction site",
+    "image": "assets/img/auctionHub.png",
+    "githubRepo": "https://github.com/Kinenystuen/Semester_project_2",
+    "liveSite": "https://kinenystuen.github.io/Semester_project_2/"
   }
 ]
