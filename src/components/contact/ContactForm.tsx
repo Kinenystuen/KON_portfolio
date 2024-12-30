@@ -44,7 +44,7 @@ function Contact() {
   };
 
   return (
-    <div className="container mx-auto p-4 pt-6 pb-10 max-w-xs sm:max-w-md lg:max-w-lg bg-customBg dark:bg-customBgDark-600 rounded-lg shadow-lg ">
+    <div className="flex-1 container p-4 max-w-xs sm:max-w-md lg:max-w-lg bg-white dark:bg-customBgDark-600 rounded-lg shadow-lg ">
       {isSubmitted ? (
         // Success State
         <div className="text-center">
@@ -95,7 +95,7 @@ function Contact() {
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-2 flex flex-col gap-1"
         >
-          <H2 className="text-xl font-semibold mb-2 px-0">Contact Me</H2>
+          <P>Send me a message!</P>
 
           <div className="flex flex-col sm:flex-row justify-between gap-3">
             {/* Full Name */}
@@ -148,7 +148,7 @@ function Contact() {
                 }
               })}
               placeholder=" "
-              className="peer cursor-pointer w-full p-2 px-3 pt-5 pb-2 border bg-customBg border-gray-300 dark:border-customBgDark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-color4-700 focus:border-color4-600 dark:bg-customBgDark-500 dark:text-whiteFont-600 resize-none overflow-hidden"
+              className="peer cursor-pointer w-full p-2 px-3 pt-5 pb-2 border bg-white focus:bg-white border-gray-300 dark:border-customBgDark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-color4-700 focus:border-color4-600 dark:bg-customBgDark-500 dark:text-whiteFont-600 resize-none overflow-hidden"
               onInput={(e) => {
                 const target = e.target as HTMLTextAreaElement;
                 target.style.height = "auto";
@@ -158,7 +158,7 @@ function Contact() {
 
             <label
               htmlFor="message"
-              className="absolute rounded-md left-3 top-[-8px] text-gray-500 dark:text-whiteFont-700 bg-customBg text-sm dark:bg-customBgDark-500 px-1 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-[-8px] peer-focus:text-sm peer-focus:text-color4-800 dark:peer-focus:text-whiteFont-600"
+              className="absolute rounded-md left-3 top-[-8px] text-gray-500 dark:text-whiteFont-700 bg-white focus:bg-white text-sm dark:bg-customBgDark-500 px-1 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-[-8px] peer-focus:text-sm peer-focus:text-color4-800 dark:peer-focus:text-whiteFont-600"
             >
               Message
             </label>
