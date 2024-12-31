@@ -116,8 +116,8 @@ button:focus-visible {
   --svg-fill-light: #0a0f1d;
   --customGreen: #4a5d46;
   --customGreenLight: #7d9079;
-  --color4: #1A659E;
-  --color4Light: #0E5F8A;
+  --color4: #1a659e;
+  --color4Light: #7487cd;
 
   /* Use dark mode autofill colors */
   --autofill-bg-color: var(--background-color);
@@ -127,7 +127,6 @@ button:focus-visible {
 body {
   color: var(--color);
   background-color: var(--background-color);
-
 }
 
 a:hover {
@@ -168,7 +167,6 @@ button {
 }
 
 @keyframes bounce {
-
   0%,
   20%,
   50%,
@@ -200,7 +198,6 @@ button {
   transform: scale(1.05);
 }
 
-
 /* Change Autocomplete styles in Chrome */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -224,7 +221,6 @@ input:focus {
   color: var(--font-color);
   outline: none;
 }
-
 
 /* Loader Styles */
 .loaderArea {

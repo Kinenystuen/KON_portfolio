@@ -110,7 +110,7 @@ const PageGallery = () => {
           onClose={() => setIsModalOpen(false)}
         >
           <div className="relative">
-            <div className="flex flex-col items-center justify-center max-w-full h-[90vh]">
+            <div className="flex flex-col items-center justify-center mx-10 max-w-full h-[90vh]">
               <img
                 src={getBaseUrl(data[currentImageIndex].image.url)}
                 alt={data[currentImageIndex].image.alt}

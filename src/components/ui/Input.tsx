@@ -41,13 +41,13 @@ const Input: React.FC<InputProps> = ({
             : undefined
         })}
         placeholder=" "
-        className="peer cursor-pointer w-full p-2 px-3 pt-5 pb-2 border border-gray-300 dark:border-customBgDark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-color4-700 focus:border-color4-600"
+        className="peer cursor-pointer w-full p-2 px-3 pt-5 pb-2 bg-white focus:bg-white dark:bg-customBgDark-500 border border-gray-300 dark:border-customBgDark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-color4-700 focus:border-color4-600"
       />
 
       {/* Label */}
       <label
         htmlFor={InputId}
-        className="absolute rounded-md left-3 top-[-8px] text-gray-500 dark:text-whiteFont-700 bg-customBg text-sm dark:bg-customBgDark-500 px-1 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-[-8px] peer-focus:text-sm peer-focus:text-color4-800 dark:peer-focus:text-whiteFont-600"
+        className="absolute rounded-md left-3 top-[-8px] text-gray-500 dark:text-whiteFont-700 bg-white text-sm dark:bg-customBgDark-500 px-1 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-[-8px] peer-focus:text-sm peer-focus:text-color4-800 dark:peer-focus:text-whiteFont-600"
       >
         {InputLabel}
       </label>

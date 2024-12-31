@@ -21,14 +21,14 @@ export const headerNavLinks = [
 export const socialMedia = [
   {
     id: 1,
-    platform: "Instagram",
-    icon: faInstagram,
-    link: "https://www.instagram.com/kinenystuen/"
-  },
-  {
-    id: 2,
     platform: "LinkedIn",
     icon: faLinkedin,
     link: "https://www.linkedin.com/in/kine-odden-nystuen-208744223/"
+  },
+  {
+    id: 2,
+    platform: "Instagram",
+    icon: faInstagram,
+    link: "https://www.instagram.com/kinenystuen/"
   }
 ];
