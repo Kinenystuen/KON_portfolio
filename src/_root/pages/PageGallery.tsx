@@ -42,7 +42,7 @@ const PageGallery = () => {
 
   /* Breadcrumb items */
   const breadcrumbItems = [
-    { label: "Home", href: "/" },
+    { label: "", href: "/" },
     {
       label: "Gallery",
       isDropdown: true,
