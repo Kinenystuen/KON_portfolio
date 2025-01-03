@@ -76,7 +76,7 @@ const KnowledgeCards: React.FC<KnowledgeCardsProps> = ({ isInView }) => {
           <Link
             to={knowledge.link}
             key={knowledge.id}
-            className={`bg-whiteRgba p-2 rounded-lg shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-105 ${
+            className={` p-2 rounded-lg flex items-center justify-center transition-transform duration-300 hover:scale-105 ${
               visibleIndex >= index
                 ? "translate-x-0 translate-y-0 opacity-100"
                 : "opacity-0 scale-90 translate-y-10"
@@ -88,7 +88,7 @@ const KnowledgeCards: React.FC<KnowledgeCardsProps> = ({ isInView }) => {
             <img
               src={knowledge.image}
               alt={knowledge.name}
-              className="h-14 w-14 md:h-16 md:w-16 lg:h-20 lg:w-20"
+              className="h-14 w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 rounded-xl"
             />
           </Link>
         </Tooltip>
