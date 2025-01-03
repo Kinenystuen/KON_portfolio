@@ -1,7 +1,6 @@
 import HeaderBar from "../components/shared/header/HeaderBar";
 import FooterBar from "../components/shared/FooterBar";
 import { Outlet } from "react-router-dom";
-import { Toaster } from "../components/ui/toaster";
 
 // The <Outlet> from react-router-dom displays any child routes, almost like
 // passing through "children" in a component. This is how we can nest routes
@@ -9,7 +8,6 @@ import { Toaster } from "../components/ui/toaster";
 const RootLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Toaster />
       {/* Header */}
       <HeaderBar />
 

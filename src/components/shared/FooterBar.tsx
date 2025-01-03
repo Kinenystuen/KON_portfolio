@@ -78,8 +78,7 @@ const FooterBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-whiteFont-300 hover:text-color4 dark:text-whiteFont-300 dark:hover:text-color4 transition duration-300 ease-in-out"
-                aria-label={`Visit ${media.platform}`}
-                title={media.platform}
+                aria-label={`Visit our ${media.platform}`}
               >
                 <FontAwesomeIcon icon={media.icon} size="2x" />
               </a>
