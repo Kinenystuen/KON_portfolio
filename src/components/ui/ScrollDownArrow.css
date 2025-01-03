@@ -1,0 +1,23 @@
+@keyframes pulse-up-down {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.animate-pulse-up-down {
+  animation: pulse-up-down 1s infinite;
+}
+
+.animate-pulse-up-down:hover {
+  transform: translateX(-50%) scale(1.1);
+  outline: none;
+  border: none;
+}

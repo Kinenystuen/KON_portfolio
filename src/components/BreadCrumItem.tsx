@@ -75,7 +75,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
                     {index === 0 && (
                       <FontAwesomeIcon
                         icon={faHome}
-                        className="w-3 h-3 me-2.5 m-0.5 "
+                        className="w-3 h-3"
                         aria-hidden="true"
                       />
                     )}
