@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
 import H2 from "../shared/Typography/H2";
 import Button from "../shared/Button/Button";
 
@@ -49,20 +50,20 @@ const Modal: React.FC<ModalProps> = ({
 
   if (!isOpen) return null;
 
-  return (
+  const modalContent = (
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-2 ${opacity}`}
       onClick={onClose}
     >
       <div
-        className={` bg-customBg dark:bg-customBgDark-500 rounded-lg shadow-lg w-full max-w-screen-sm lg:max-w-screen-lg 2xl:max-w-screen-2xl overflow-y-auto p-4 relative ${className}`}
+        className={`bg-customBg dark:bg-customBgDark-500 rounded-lg shadow-lg w-full max-w-screen-sm lg:max-w-screen-lg 2xl:max-w-screen-2xl overflow-y-auto p-4 relative ${className}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
         {title && (
           <div
             className={`flex items-center pb-2 mb-4 ${
-              title ? " justify-between" : "justify-end"
+              title ? "justify-between" : "justify-end"
             }`}
           >
             <H2 className="font-bold text-lg text-gray-800 dark:text-whiteFont-500">
@@ -75,7 +76,7 @@ const Modal: React.FC<ModalProps> = ({
           ariaLabel="Close Modal"
           title="Close"
           buttonType="transparent"
-          className="absolute top-2 right-2"
+          className="absolute top-2 right-2 bg-inherit border border-customBgDark-500"
         >
           ✕
         </Button>
@@ -85,6 +86,8 @@ const Modal: React.FC<ModalProps> = ({
       </div>
     </div>
   );
+
+  return ReactDOM.createPortal(modalContent, document.body);
 };
 
 export default Modal;
