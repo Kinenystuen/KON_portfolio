@@ -4,6 +4,7 @@ import H1 from "../../components/shared/Typography/H1";
 import P from "../../components/shared/Typography/P";
 import useInView from "../../hooks/useInView";
 import { motion } from "framer-motion";
+import ScrollDownArrow from "../../components/ui/ScrollDownArrow";
 
 const AnimatedHeader: React.FC = () => {
   const [scrollY, setScrollY] = useState<number>(0);
@@ -14,7 +15,7 @@ const AnimatedHeader: React.FC = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   if (isInView && !hasAnimated) {
-    setHasAnimated(true); // Mark animation as completed
+    setHasAnimated(true);
   }
 
   useEffect(() => {
@@ -75,19 +76,17 @@ const AnimatedHeader: React.FC = () => {
 
   const maskSize = calculateSize();
 
-  // Calculate the bounce transform for the image
-  const calculateBounceTransform = () => {
+  const calculateTransform = () => {
     const maxScroll = 100;
     const percentage = Math.min(scrollY / maxScroll, 1);
 
-    const bounceScale = 1 + Math.sin(percentage * Math.PI) * 0.1;
     const translateY = percentage * 300;
-    const scale2 = 1 - percentage;
+    const scale = 1 - percentage;
 
-    return { bounceScale, translateY, scale2 };
+    return { scale, translateY };
   };
 
-  const { bounceScale, translateY, scale2 } = calculateBounceTransform();
+  const { translateY, scale } = calculateTransform();
 
   return (
     <div className="relative w-full h-[220vh] overflow-hidden dark:bg-gradient-to-tr dark:from-[#8284AE ] dark:to-[#7578A8]">
@@ -116,7 +115,7 @@ const AnimatedHeader: React.FC = () => {
           <div
             className="absolute bottom-0 left-0 sm:left-[10%] md:left-[15%] lg:left-[18%] z-30"
             style={{
-              transform: `translateY(${translateY}px) scale(${scale2 * bounceScale})`,
+              transform: `translateY(${translateY}px) scale(${scale})`,
               transition: "transform 0.3s ease-out"
             }}
           >
@@ -153,19 +152,22 @@ const AnimatedHeader: React.FC = () => {
         style={{
           top: `calc(${maskSize.height} + ${maskSize.height} / ${PTop} )`,
           transform: `translate(-50%, -${scrollY}px)`,
-          opacity: 1 - Math.min(scrollY / 100, 1)
+          opacity: 1 - Math.min(scrollY / 30, 1)
         }}
       >
         Front-end Developer.
       </p>
 
-      {/* About text? */}
+      {/* Arrow Down */}
+      <ScrollDownArrow />
+
+      {/* About text */}
       <motion.div
         ref={elementRef}
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, ease: "easeIn" }}
-        className="absolute bottom-[40vh] w-full z-20"
+        className="absolute bottom-[40vh] w-full z-20 aboutMe-target"
       >
         <div className=" mx-3 sm:mx-auto h-[50vh] max-w-4xl flex flex-col md:flex-row items-center justify-center gap-6 p-6 rounded-xl">
           {/* Profile Image */}
