@@ -126,5 +126,29 @@
       "url": "assets/img/art/2015_3.jpg",
       "alt": ""
     }
+  },
+  {
+    "id": 17,
+    "description": "Prins",
+    "image": {
+      "url": "assets/img/art/prins.JPEG",
+      "alt": "Drawing - Prins"
+    }
+  },
+  {
+    "id": 18,
+    "description": "Dab",
+    "image": {
+      "url": "assets/img/art/dab.JPEG",
+      "alt": "Drawing - Dab"
+    }
+  },
+  {
+    "id": 19,
+    "description": "Rose",
+    "image": {
+      "url": "assets/img/art/2015_6.JPG",
+      "alt": "Drawing - Rose"
+    }
   }
 ]
