@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { getBaseUrl } from "../BaseNameUtils";
 import H3 from "../Typography/H3";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface InterestsBoxProps {
   title: string;
@@ -18,7 +18,33 @@ const InterestsBox: React.FC<InterestsBoxProps> = ({
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+          } else {
+            // setIsInView(false); // Uncomment this line to hide the box when it's not in view
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (boxRef.current) {
+      observer.observe(boxRef.current);
+    }
+
+    return () => {
+      if (boxRef.current) {
+        observer.unobserve(boxRef.current);
+      }
+    };
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (boxRef.current) {
@@ -46,7 +72,11 @@ const InterestsBox: React.FC<InterestsBoxProps> = ({
     <Link to={link}>
       <div
         ref={boxRef}
-        className={`relative w-auto bg-gradient-to-br ${gradientClass} h-50 sm:h-72 w-auto flex-wrap p-4 flex flex-col justify-center content-center items-center rounded-xl shadow-md overflow-hidden cursor-pointer group`}
+        className={`relative w-auto bg-gradient-to-br ${gradientClass} h-50 sm:h-72 w-auto flex-wrap p-4 flex flex-col justify-center content-center items-center rounded-xl shadow-md overflow-hidden cursor-pointer group transition-all duration-700 ${
+          isInView
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 translate-y-10 scale-95"
+        }`}
         tabIndex={0}
         role="button"
         aria-label={`View details for Hiking`}
