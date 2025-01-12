@@ -23,16 +23,20 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ isInView }) => {
     <FetchProjects>
       {(data) => (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {data.map((project, index) => (
-            <div
-              key={project.id}
-              className={`transition-opacity duration-500 ${
-                index <= visibleIndex ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <ProjectCard data={project} />
-            </div>
-          ))}
+          {/* Reverse the data array before mapping */}
+          {data
+            .slice()
+            .reverse()
+            .map((project, index) => (
+              <div
+                key={project.id}
+                className={`transition-opacity duration-500 ${
+                  index <= visibleIndex ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <ProjectCard data={project} />
+              </div>
+            ))}
         </div>
       )}
     </FetchProjects>
