@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBook,
+  faCheck,
+  faEnvelope,
+  faInfo,
+  faUser
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { urlContactForm } from "../../library/constants";
@@ -102,6 +108,7 @@ function Contact() {
             <Input
               InputId="fullname"
               InputLabel="Full Name"
+              icon={faUser}
               register={register}
               errors={errors}
               required={true}
@@ -113,6 +120,7 @@ function Contact() {
             <Input
               InputId="email"
               InputLabel="Email"
+              icon={faEnvelope}
               register={register}
               errors={errors}
               required={true}
@@ -125,6 +133,7 @@ function Contact() {
           <Input
             InputId="subject"
             InputLabel="Subject"
+            icon={faBook}
             register={register}
             errors={errors}
             required={true}
@@ -133,7 +142,54 @@ function Contact() {
           />
 
           {/* Message */}
-          <div className="relative w-full ">
+          <div className="relative w-full">
+            <FontAwesomeIcon
+              icon={faInfo}
+              data-testid="icon"
+              className="absolute h-4 w-4 top-5 left-4 text-gray-400 peer-focus:text-color4-700 dark:text-gray-500 dark:peer-focus:text-color4-600"
+            />
+            <textarea
+              id="message"
+              {...register("bodyText", {
+                required: "Message is required.",
+                minLength: {
+                  value: 3,
+                  message: "Minimum length is 3 characters."
+                },
+                maxLength: {
+                  value: 1000,
+                  message: "Maximum length is 1000 characters."
+                }
+              })}
+              placeholder=""
+              className="peer w-full p-2 pl-10 pt-5 pb-2 border bg-white focus:bg-white border-gray-300 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-color4-700 focus:border-color4-600 dark:bg-customBgDark-500 dark:text-whiteFont-600 resize-none rounded-md"
+              onInput={(e) => {
+                const target = e.target as HTMLTextAreaElement;
+                target.style.height = "auto";
+                target.style.height = `${target.scrollHeight}px`;
+              }}
+            />
+            {/* Input Label */}
+            <label
+              htmlFor={"message"}
+              aria-label="Message"
+              className={`absolute rounded-md left-6 top-[-8px] text-gray-500 dark:text-whiteFont-700 bg-white text-sm dark:bg-customBgDark-500 px-1 transition-all 
+              peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base 
+              peer-focus:top-[-8px] peer-focus:text-sm peer-focus:text-color4-800 dark:peer-focus:text-whiteFont-600 peer-placeholder-shown:left-11 peer-focus:left-6
+              }`}
+            >
+              Message
+            </label>
+            <ErrorMessage
+              errors={errors}
+              name="bodyText"
+              render={({ message }) => (
+                <p className="text-red-500 text-sm mt-1">{message}</p>
+              )}
+            />
+          </div>
+          {/* Old Message */}
+          {/* <div className="relative w-full ">
             <textarea
               id="message"
               {...register("bodyText", {
@@ -169,7 +225,7 @@ function Contact() {
                 <p className="text-red-500 text-sm mt-1">{message}</p>
               )}
             />
-          </div>
+          </div> */}
 
           {/* API Error */}
           {isError && <p className="text-red-500">{errorMessage}</p>}
