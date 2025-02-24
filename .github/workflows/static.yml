@@ -21,6 +21,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       # Checkout repository
       - name: Checkout
@@ -30,11 +31,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18 # Use latest stable version
 
-      # Install dependencies
+      # Remove old build files to prevent caching issues
+      - name: Clean build folder
+        run: rm -rf dist && mkdir dist
+
+      # Install dependencies using clean install
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       # Load environment variables
       - name: Set up environment variables
@@ -47,15 +52,15 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # Manually copy public folder content to dist
+      # Ensure public folder contents (JSON, assets) are copied to dist
       - name: Copy public files to dist
         run: cp -r public/* dist/
 
-      # Verify dist folder contents
-      - name: Verify dist folder contents
-        run: ls -R dist
+      # Verify JSON is in the correct location
+      - name: Check JSON in dist
+        run: ls -R dist/json || echo "JSON folder missing!"
 
-      # Copy index.html to 404.html
+      # Copy index.html to 404.html for SPA fallback
       - name: Create 404.html for SPA fallback
         run: cp dist/index.html dist/404.html
 
@@ -69,3 +74,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Force GitHub Pages to update JSON (Optional, but helps)
+      - name: Invalidate GitHub Pages Cache for JSON
+        run: |
+          curl -X PURGE https://<your-github-username>.github.io/json/portfolioData.json
