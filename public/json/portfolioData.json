@@ -39,8 +39,19 @@
     "year": 2024,
     "type": "Semester project 2",
     "categoryType": "Fictional online auction site",
-    "image": "assets/img/auctionHub.png",
+    "image": "assets/img/auctionHub_homepage.jpg",
     "githubRepo": "https://github.com/Kinenystuen/Semester_project_2",
     "liveSite": "https://kinenystuen.github.io/Semester_project_2/"
+  },
+  {
+    "id": 5,
+    "name": "Holidaze",
+    "description": "Holidaze is a front-end accommodation booking application developed for the Noroff Project Exam 2. The application allows users to browse and book venues while providing an admin-facing dashboard for venue management.",
+    "year": 2025,
+    "type": "Project exam 2",
+    "categoryType": "Fictional booking site",
+    "image": "assets/img/Holidaze_homepage.jpg",
+    "githubRepo": "https://github.com/Kinenystuen/Holidaze",
+    "liveSite": "https://kinenystuen.github.io/Holidaze/"
   }
 ]
