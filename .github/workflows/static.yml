@@ -27,11 +27,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Install Node.js
+      # Install Node.js (Updated to v20)
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Use latest stable version
+          node-version: 20 
 
       # Remove old build files to prevent caching issues
       - name: Clean build folder
@@ -75,7 +75,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # Force GitHub Pages to update JSON (Optional, but helps)
+      # Corrected GitHub Pages Cache Purge (Replace YOUR_USERNAME)
       - name: Invalidate GitHub Pages Cache for JSON
         run: |
-          curl -X PURGE https://<your-github-username>.github.io/json/portfolioData.json
+          curl -X PURGE https://Kinenystuen.github.io/json/portfolioData.json
