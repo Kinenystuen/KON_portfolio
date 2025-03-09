@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../ui/Modal";
 import H3 from "../shared/Typography/H3";
 import P from "../shared/Typography/P";
@@ -25,7 +23,7 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
     <div className="cursor-pointer group ">
       {/* Project Card */}
       <div
-        className="bg-white dark:bg-customBgDark-500 relative rounded-xl shadow-md overflow-hidden  hover:shadow-lg"
+        className="bg-white dark:bg-customBgDark-500 relative rounded-xl shadow-sm overflow-hidden"
         onClick={() => setIsModalOpen(true)}
         tabIndex={0}
         role="button"
@@ -35,26 +33,13 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
         <img
           src={getBaseUrl(image)}
           alt={name}
-          className="w-full h-80 object-cover"
+          className="w-full h-80 object-cover hover:scale-105 transition duration-300 ease-in-out"
           onError={(e) => {
             (e.target as HTMLImageElement).src = getBaseUrl(
               "assets/Robot_builder.svg"
             );
           }}
         />
-
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-          <FontAwesomeIcon icon={faEye} className="text-white text-3xl" />
-        </div>
-
-        {/* Card Footer */}
-        <div className="absolute bottom-0 w-full p-2">
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div>
-
-          {/* Hover Text */}
-          <div className="absolute top-[-20px] right-0 w-full flex justify-start"></div>
-        </div>
       </div>
       {/* Project Info */}
       <div

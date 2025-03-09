@@ -70,13 +70,6 @@
     "id": "10"
   },
   {
-    "name": "Git",
-    "image": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
-    "alt": "Git logo",
-    "link": "https://git-scm.com/",
-    "id": "11"
-  },
-  {
     "name": "RStudio",
     "image": "https://www.fileeagle.com/data/2021/05/RStudio.png",
     "alt": "RStudio",
@@ -89,13 +82,6 @@
     "alt": "ArcGIS",
     "link": "https://www.arcgis.com/index.html",
     "id": "13"
-  },
-  {
-    "name": "Node.js",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
-    "alt": "Node.js",
-    "link": "https://nodejs.org/",
-    "id": "14"
   },
   {
     "name": "Netlify",

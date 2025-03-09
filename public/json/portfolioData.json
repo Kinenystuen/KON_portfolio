@@ -45,6 +45,17 @@
   },
   {
     "id": 5,
+    "name": "eCom Store",
+    "description": "eCom Store is a fictional shopping site developed for the JavaScript Frameworks CA. The application allows users to browse and purchase products.",
+    "year": 2024,
+    "type": "JavaScript Frameworks CA",
+    "categoryType": "Fictional shopping site",
+    "image": "assets/img/eComStore.jpg",
+    "githubRepo": "https://github.com/Kinenystuen/eComStore",
+    "liveSite": "https://kinenystuen.github.io/eComStore/"
+  },
+  {
+    "id": 6,
     "name": "Holidaze",
     "description": "Holidaze is a front-end accommodation booking application developed for the Noroff Project Exam 2. The application allows users to browse and book venues while providing an admin-facing dashboard for venue management.",
     "year": 2025,
