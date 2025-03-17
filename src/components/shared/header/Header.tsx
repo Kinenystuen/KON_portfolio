@@ -51,7 +51,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full mx-auto h-14 z-50">
+    <div className="w-full mx-auto h-16 z-50">
       <div className="fixed w-full p-2 px-4 lg:px-6 ">
         {" "}
         {/* Fixed Header */}
