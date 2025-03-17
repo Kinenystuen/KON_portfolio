@@ -3,7 +3,7 @@ import Section from "../../components/shared/Section";
 import { useApi } from "../../hooks/UseApi";
 import Loader from "../../components/ui/Loader";
 import { Gallery } from "../../library/types";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ModalImage from "../../components/ui/ModalImage";
 import Breadcrumb from "../../components/BreadCrumItem";
 import H2 from "../../components/shared/Typography/H2";
@@ -11,6 +11,7 @@ import { getBaseUrl } from "../../components/shared/BaseNameUtils";
 import ErrorMessage from "../../components/shared/ErrorMessage";
 import P from "../../components/shared/Typography/P";
 import Button from "../../components/shared/Button/Button";
+import ImageWithSkeleton from "../../components/shared/ImageWithSkeleton";
 
 const PageGallery = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,12 +19,77 @@ const PageGallery = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(
     null
   );
+  const galleryRef = useRef<HTMLDivElement>(null);
 
   const jsonUrl = id === "nature" ? `json/MeData.json` : `json/ArtData.json`;
   const headerTitle = id === "nature" ? "Nature" : "Art";
   const { data, isLoading, isError, errorMessage } = useApi<Gallery[]>(
     `${import.meta.env.BASE_URL}${jsonUrl}`
   );
+
+  useEffect(() => {
+    function justifyImages() {
+      const container = galleryRef.current;
+      if (!container) return;
+
+      const images = Array.from(container.children);
+      let row: HTMLImageElement[] = [];
+      let rowWidth = 0;
+      const containerWidth = container.clientWidth;
+
+      images.forEach((imgWrapper, index) => {
+        const img = imgWrapper.querySelector("img");
+        if (!img) return;
+
+        img.style.height = "200px"; // Fixed row height
+        img.style.width = "auto"; // Reset width
+
+        row.push(img);
+        rowWidth += img.clientWidth + 8; // Add 8px gap
+
+        if (rowWidth >= containerWidth || index === images.length - 1) {
+          // Adjust row widths proportionally
+          const scaleFactor =
+            (containerWidth - (row.length - 1) * 8) / rowWidth;
+          row.forEach((image) => {
+            image.style.width = `${image.clientWidth * scaleFactor}px`;
+          });
+
+          row = [];
+          rowWidth = 0;
+        }
+      });
+    }
+
+    // Ensure images are fully loaded before running justification
+    function waitForImagesToLoad() {
+      const images = galleryRef.current?.querySelectorAll("img");
+      if (!images) return;
+
+      let loadedCount = 0;
+      images.forEach((img) => {
+        if (img.complete) {
+          loadedCount++;
+        } else {
+          img.onload = () => {
+            loadedCount++;
+            if (loadedCount === images.length) {
+              justifyImages(); // Run only when all images are loaded
+            }
+          };
+        }
+      });
+
+      if (loadedCount === images.length) {
+        justifyImages();
+      }
+    }
+
+    window.addEventListener("resize", justifyImages);
+    waitForImagesToLoad(); // Ensure images are loaded before justifying
+
+    return () => window.removeEventListener("resize", justifyImages);
+  }, [data]);
 
   if (isLoading) {
     return <Loader />;
@@ -75,11 +141,11 @@ const PageGallery = () => {
       <div className="flex items-center justify-between mb-6 ">
         <H2 className="font-bold text-2xl uppercase">{headerTitle} gallery</H2>
       </div>
-      <div className="masonry-container columns-2 sm:columns-3 md:columns-4 gap-4">
+      <div ref={galleryRef} className="flex flex-wrap justify-start gap-2">
         {data.map((galleryItem, index) => (
           <div
             key={galleryItem.id}
-            className="mb-[1rem] break-inside-avoid scaleUp"
+            className="relative cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={() => handleImageClick(index)}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
@@ -91,10 +157,10 @@ const PageGallery = () => {
             role="button"
             aria-label={`View image ${galleryItem.image.alt}`}
           >
-            <img
+            <ImageWithSkeleton
               src={getBaseUrl(galleryItem.image.url)}
               alt={galleryItem.image.alt}
-              className="h-auto max-w-full rounded-sm shadow-md"
+              className="rounded-sm"
             />
           </div>
         ))}

@@ -7,7 +7,7 @@ const PageNotFound = () => {
     <div className="flex flex-col justify-center items-center">
       <ErrorMessage message="404 Page not found">
         <Link to="/" className="m-1.5 p-2 hover:bg-transparent rounded-lg px-4">
-          <Button>Go back to homepage</Button>
+          <Button buttonType="violet">Go back to homepage</Button>
         </Link>
       </ErrorMessage>
     </div>

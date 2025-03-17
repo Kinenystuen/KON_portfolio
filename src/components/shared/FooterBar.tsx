@@ -16,13 +16,14 @@ const FooterBar = () => {
         <path d="M1280 11C1280 11 502.5 46 0 0.5V46H1280V11Z" />
       </svg>
 
-      <div className="bg-color3 dark:bg-customBgDark-900 p-16 flex gap-0 justify-center">
+      <div className="bg-color3 dark:bg-customBgDark-900 p-16 flex gap-0 justify-center flex-col md:flex-row">
         {/* Copy Right Section */}
-        <div className="flex-1 justify-start content-center">
-          <p className="text-center md:text-start p-2 mb-4 text-sm text-whiteFont-200 dark:text-whiteFont-500">
-            Copyright © 2024 | Kine Odden Nystuen.
+        <div className="flex-1">
+          <p className="text-center md:text-start p-2 mb-4 my-auto text-sm text-whiteFont-200 dark:text-whiteFont-500">
+            Copyright © {new Date().getFullYear()} | Kine Odden Nystuen.
           </p>
         </div>
+
         {/* Logo Section - links */}
         <div className="flex-1 flex-grow">
           {/* Logo Section */}
@@ -49,7 +50,7 @@ const FooterBar = () => {
             </Link>
           </div>
           {/* Links */}
-          <div className="flex justify-center gap-3 mt-4 flex-wrap">
+          {/* <div className="flex justify-center gap-3 mt-4 flex-wrap">
             <Link to="/contact">
               <Button
                 buttonType="transparent"
@@ -66,7 +67,7 @@ const FooterBar = () => {
                 About Me
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
         {/* Social Media Icons */}
         <div className="flex-1 justify-center content-center mt-8 md:m-0">

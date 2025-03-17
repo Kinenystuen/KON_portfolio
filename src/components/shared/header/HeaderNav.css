@@ -37,6 +37,7 @@
   width: 2.4rem;
   height: 2px;
   background-color: var(--font-color);
+  border-radius: 0.5rem;
   transition:
     opacity 200ms ease-in-out,
     width 200ms ease-in-out,
