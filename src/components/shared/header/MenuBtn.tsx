@@ -13,8 +13,8 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   return (
     <div className="hamburger_icon_container flex justify-center items-center">
       <button
-        className={`hamburger_icon border-none cursor-pointer 
-        rounded-sm focus:outline-none focus:ring-2 ${isOpen ? "cross" : ""}`}
+        className={`hamburger_icon border-none cursor-pointer h-fill
+        rounded-sm focus:outline-none focus:ring ${isOpen ? "cross" : ""}`}
         aria-expanded={isOpen}
         title="Navigation menu button"
         onClick={toggleMenu}

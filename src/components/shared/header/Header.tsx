@@ -51,7 +51,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full mx-auto h-16 z-50">
+    <div className="w-full mx-auto h-14 z-50">
       <div className="fixed w-full p-2 px-4 lg:px-6 ">
         {" "}
         {/* Fixed Header */}
@@ -66,7 +66,7 @@ const Header = () => {
           <div className="flex justify-between items-center h-full ">
             <Link
               to="/"
-              className="flex justify-start content-center items-center w-fit px-4 h-full"
+              className="flex justify-start content-center items-center w-fit px-4 h-full z-30"
               aria-label="KON logo"
             >
               <svg
@@ -101,14 +101,14 @@ const Header = () => {
 
               {/* Navigation Menu */}
               <nav
-                className={`fixed left-0 top-0 w-full  shadow-md lg:relative lg:w-auto lg:me-2 lg:bg-transparent lg:shadow-none lg:max-h-none lg:overflow-visible transition-all duration-300 overflow-hidden ${
+                className={`fixed left-0 top-0 w-full rounded-xl  shadow-md lg:relative lg:w-auto lg:me-2 lg:bg-transparent lg:shadow-none lg:max-h-none lg:overflow-visible transition-all duration-300 overflow-hidden ${
                   menuOpen
                     ? "z-0 max-h-screen pt-[2.5rem] bg-customBg dark:bg-customBgDark"
                     : "-z-10 max-h-0 lg:z-auto lg:max-h-none"
                 }`}
               >
                 <ul
-                  className={`flex flex-col lg:flex-row lg:items-center lg:justify-center lg:content-center gap-2 lg:gap-2 m-2 mx-4 mt-10 mb-5 lg:m-0 lg:p-0 transition-transform lg:-translate-y-0 duration-300 ${
+                  className={`flex flex-col lg:flex-row lg:items-center lg:justify-center lg:content-center gap-2 lg:gap-2 m-2 mx-2 mt-10 mb-5 lg:m-0 lg:p-0 transition-transform lg:-translate-y-0 duration-300 ${
                     menuOpen ? "translate-y-0 " : "-translate-y-full"
                   }`}
                 >
@@ -117,12 +117,12 @@ const Header = () => {
                     return (
                       <li
                         key={link.label}
-                        className="relative py-2  border-b border-customBgDark-600 lg:py-1 hover:border-color4-500 dark:hover:border-color4-800 lg:border-none "
+                        className="relative py-2 border-customBgDark-600 lg:py-1 hover:border-color4-500 dark:hover:border-color4-800 lg:border-none "
                       >
                         <NavLink
                           to={link.route}
                           onClick={() => setMenuOpen(false)}
-                          className={`relative m-2 text-gray-600 hover:text-black dark:text-whiteFont-600 dark:hover:text-whiteFont-500  uppercase lg:flex lg:items-center py-2 px-3 text-sm font-semibold transition-all duration-300 ${
+                          className={`relative m-2 text-gray-600 hover:text-black dark:text-whiteFont-600 dark:hover:text-whiteFont-500  uppercase lg:flex lg:items-center py-2 px-0 text-sm font-semibold transition-all duration-300 ${
                             isActive
                               ? "text-black hover:text-inherit dark:text-whiteFont-400 cursor-default"
                               : ""
