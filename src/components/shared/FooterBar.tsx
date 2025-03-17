@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { socialMedia } from "../../library/constants";
 import { Link } from "react-router-dom";
-import Button from "./Button/Button";
 
 const FooterBar = () => {
   return (
