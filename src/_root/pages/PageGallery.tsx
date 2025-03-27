@@ -27,112 +27,64 @@ const PageGallery = () => {
     `${import.meta.env.BASE_URL}${jsonUrl}`
   );
 
-  // useEffect(() => {
-  //   function justifyImages() {
-  //     const container = galleryRef.current;
-  //     if (!container) return;
-
-  //     const images = Array.from(container.children);
-  //     let row: HTMLImageElement[] = [];
-  //     let rowWidth = 0;
-  //     const containerWidth = container.clientWidth;
-
-  //     images.forEach((imgWrapper, index) => {
-  //       const img = imgWrapper.querySelector("img");
-  //       if (!img) return;
-
-  //       img.style.height = "200px"; // Fixed row height
-  //       img.style.width = "auto"; // Reset width
-
-  //       row.push(img);
-  //       rowWidth += img.clientWidth + 8; // Add 8px gap
-
-  //       if (rowWidth >= containerWidth || index === images.length - 1) {
-  //         // Adjust row widths proportionally
-  //         const scaleFactor =
-  //           (containerWidth - (row.length - 1) * 8) / rowWidth;
-  //         row.forEach((image) => {
-  //           image.style.width = `${image.clientWidth * scaleFactor}px`;
-  //         });
-
-  //         row = [];
-  //         rowWidth = 0;
-  //       }
-  //     });
-  //   }
-
-  //   // Ensure images are fully loaded before running justification
-  //   function waitForImagesToLoad() {
-  //     const images = galleryRef.current?.querySelectorAll("img");
-  //     if (!images) return;
-
-  //     let loadedCount = 0;
-  //     images.forEach((img) => {
-  //       if (img.complete) {
-  //         loadedCount++;
-  //       } else {
-  //         img.onload = () => {
-  //           loadedCount++;
-  //           if (loadedCount === images.length) {
-  //             justifyImages(); // Run only when all images are loaded
-  //           }
-  //         };
-  //       }
-  //     });
-
-  //     if (loadedCount === images.length) {
-  //       justifyImages();
-  //     }
-  //   }
-
-  //   window.addEventListener("resize", justifyImages);
-  //   waitForImagesToLoad(); // Ensure images are loaded before justifying
-
-  //   return () => window.removeEventListener("resize", justifyImages);
-  // }, [data]);
-
   useEffect(() => {
     function justifyImages() {
       const container = galleryRef.current;
       if (!container) return;
 
-      const images = Array.from(container.children);
-      let row: HTMLImageElement[] = [];
-      let rowWidth = 0;
+      const items = Array.from(container.children) as HTMLElement[];
       const containerWidth = container.clientWidth;
-      const gap = 8; // gap size
+      const gap = 8;
+      const idealRowHeight = 220;
 
-      images.forEach((imgWrapper, index) => {
-        const img = imgWrapper.querySelector("img");
-        if (!img) return;
+      let currentRow: {
+        img: HTMLImageElement;
+        aspectRatio: number;
+        wrapper: HTMLElement;
+      }[] = [];
+      let totalAspectRatio = 0;
 
-        img.style.width = "auto";
+      const layoutRow = (isLastRow = false) => {
+        if (currentRow.length === 0) return;
 
-        row.push(img);
-        rowWidth += img.clientWidth + gap;
+        const totalGap = gap * (currentRow.length - 1);
+        const scale = (containerWidth - totalGap) / totalAspectRatio;
 
-        const isLastImage = index === images.length - 1;
+        const rowHeight = isLastRow ? idealRowHeight : scale; // Keep ideal height on last row for consistency
 
-        // Build row when it exceeds the container width or last image
-        if (rowWidth >= containerWidth || isLastImage) {
-          // Recalculate scale factor to fill row
-          const totalImageWidth = row.reduce(
-            (sum, img) => sum + img.clientWidth,
-            0
-          );
-          const totalGaps = gap * (row.length - 1);
-          const scaleFactor = (containerWidth - totalGaps) / totalImageWidth;
+        currentRow.forEach(({ img, aspectRatio, wrapper }) => {
+          const width = rowHeight * aspectRatio;
+          wrapper.style.width = `${width}px`;
+          wrapper.style.height = `${rowHeight}px`;
+          img.style.width = "100%";
+          img.style.height = "100%";
+        });
 
-          // Scale each image in the row
-          row.forEach((img) => {
-            img.style.width = `${img.clientWidth * scaleFactor}px`;
-          });
+        currentRow = [];
+        totalAspectRatio = 0;
+      };
 
-          // Reset for next row
-          row = [];
-          rowWidth = 0;
+      for (const wrapper of items) {
+        const img = wrapper.querySelector("img");
+        if (!img || !img.naturalWidth || !img.naturalHeight) continue;
+
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+
+        currentRow.push({ img, aspectRatio, wrapper });
+        totalAspectRatio += aspectRatio;
+
+        const totalGap = gap * (currentRow.length - 1);
+        const estimatedWidth = idealRowHeight * totalAspectRatio + totalGap;
+
+        if (estimatedWidth >= containerWidth) {
+          layoutRow(false);
         }
-      });
+      }
+
+      // Layout last row to match row height but not stretch full width
+      if (currentRow.length > 0) {
+        layoutRow(true);
+      }
     }
 
     // Ensure images are fully loaded before running justification
@@ -148,7 +100,7 @@ const PageGallery = () => {
           img.onload = () => {
             loadedCount++;
             if (loadedCount === images.length) {
-              justifyImages(); // Run only when all images are loaded
+              justifyImages();
             }
           };
         }
@@ -215,11 +167,16 @@ const PageGallery = () => {
       <div className="flex items-center justify-between mb-6 ">
         <H2 className="font-bold text-2xl uppercase">{headerTitle} gallery</H2>
       </div>
-      <div ref={galleryRef} className="flex flex-wrap justify-start gap-2">
+      <div
+        ref={galleryRef}
+        className="flex flex-wrap justify-start gap-2"
+        style={{ alignContent: "flex-start" }}
+      >
         {data.map((galleryItem, index) => (
           <div
             key={galleryItem.id}
             className="relative cursor-pointer hover:scale-105 transition-transform duration-300"
+            style={{ overflow: "hidden" }}
             onClick={() => handleImageClick(index)}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
