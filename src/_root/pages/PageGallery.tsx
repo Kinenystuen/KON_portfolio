@@ -34,8 +34,9 @@ const PageGallery = () => {
 
       const items = Array.from(container.children) as HTMLElement[];
       const containerWidth = container.clientWidth;
-      const gap = 8;
-      const idealRowHeight = 220;
+      const gap = 10;
+      const idealRowHeight =
+        containerWidth > 1000 ? 250 : containerWidth > 700 ? 220 : 180;
 
       let currentRow: {
         img: HTMLImageElement;
@@ -44,25 +45,25 @@ const PageGallery = () => {
       }[] = [];
       let totalAspectRatio = 0;
 
-      const layoutRow = (isLastRow = false) => {
-        if (currentRow.length === 0) return;
-
+      function layoutRow(fillRow = true) {
         const totalGap = gap * (currentRow.length - 1);
-        const scale = (containerWidth - totalGap) / totalAspectRatio;
-
-        const rowHeight = isLastRow ? idealRowHeight : scale; // Keep ideal height on last row for consistency
+        const scale = fillRow
+          ? (containerWidth - totalGap) / totalAspectRatio
+          : idealRowHeight;
 
         currentRow.forEach(({ img, aspectRatio, wrapper }) => {
-          const width = rowHeight * aspectRatio;
+          const width = fillRow ? scale * aspectRatio : aspectRatio * scale;
+          const height = fillRow ? scale : scale;
+
           wrapper.style.width = `${width}px`;
-          wrapper.style.height = `${rowHeight}px`;
+          wrapper.style.height = `${height}px`;
           img.style.width = "100%";
           img.style.height = "100%";
         });
 
         currentRow = [];
         totalAspectRatio = 0;
-      };
+      }
 
       for (const wrapper of items) {
         const img = wrapper.querySelector("img");
@@ -74,16 +75,17 @@ const PageGallery = () => {
         totalAspectRatio += aspectRatio;
 
         const totalGap = gap * (currentRow.length - 1);
-        const estimatedWidth = idealRowHeight * totalAspectRatio + totalGap;
+        const estimatedRowWidth = idealRowHeight * totalAspectRatio + totalGap;
 
-        if (estimatedWidth >= containerWidth) {
-          layoutRow(false);
+        if (estimatedRowWidth >= containerWidth * 0.95) {
+          layoutRow(true);
         }
       }
 
-      // Layout last row to match row height but not stretch full width
+      // Handle final row — stretch if there are at least 3 images
       if (currentRow.length > 0) {
-        layoutRow(true);
+        const shouldFillRow = currentRow.length >= 4 || containerWidth < 600;
+        layoutRow(shouldFillRow);
       }
     }
 
