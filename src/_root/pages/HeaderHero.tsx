@@ -7,7 +7,11 @@ import useInView from "../../hooks/useInView";
 import HeroImage from "./HeroImage";
 import Button from "../../components/shared/Button/Button";
 
-const HeaderHero = () => {
+type HeaderHeroProps = {
+  onViewWorkClick: () => void;
+};
+
+const HeaderHero = ({ onViewWorkClick }: HeaderHeroProps) => {
   const { elementRef, isInView } = useInView(0.2);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -39,8 +43,8 @@ const HeaderHero = () => {
                 <P className="text-xl md:text-2xl lg:text-3xl text-customBgDark/80 dark:text-gray-300">
                   Front-end Developer
                 </P>
-                <Button buttonType="gradient" className="">
-                  View My Work
+                <Button buttonType="gradient" onClick={onViewWorkClick}>
+                  View My Projects
                 </Button>
               </div>
             </div>
