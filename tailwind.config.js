@@ -150,8 +150,8 @@ export default {
         }
       },
       fontFamily: {
-        header: ["Poppins", "sans-serif"],
-        body: ["Nunito", "sans-serif"],
+        header: ["Montserrat", "sans-serif"],
+        body: ["Inter", "sans-serif"],
         other: ["Amatic SC", "cursive"]
       },
       fontSize: {
