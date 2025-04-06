@@ -25,6 +25,12 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
       <div
         className="bg-white dark:bg-customBgDark-500 relative rounded-xl shadow-sm overflow-hidden"
         onClick={() => setIsModalOpen(true)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setIsModalOpen(true);
+          }
+        }}
         tabIndex={0}
         role="button"
         aria-label={`View details for ${name}`}

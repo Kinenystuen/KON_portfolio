@@ -4,7 +4,7 @@
 
 /* Root CSS Variables and Base Styles */
 :root {
-  font-family: Nunito, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -38,11 +38,11 @@ body {
 
 h1 {
   line-height: 1.1;
-  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p {
-  font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {
@@ -68,7 +68,7 @@ button:focus-visible {
 
 /* Define CSS classes for light and dark modes */
 :root {
-  font-family: "nunito", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   --color: #213547;
   --font-color: #000;
@@ -134,30 +134,15 @@ a:hover {
 }
 
 h1 {
-  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-button {
-  background-color: var(--button-bg);
-}
 
 /* Base Layer Styles for Tailwind */
 @layer base {
   :root {
     --radius: 0.5rem;
   }
-}
-
-/* Base Button Styles */
-.button {
-  transition:
-    transform 0.3s,
-    background-color 0.3s,
-    color 0.3s;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
 }
 
 /* Animation Styles */
@@ -167,6 +152,7 @@ button {
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -246,4 +232,17 @@ input:focus {
 .animate {
   animation-duration: 1s;
   animation-fill-mode: both;
+}
+
+.clip-path-bottom {
+  clip-path: ellipse(100% 60% at 50% 40%);
+  -webkit-clip-path: ellipse(120% 60% at 50% 40%);
+}
+
+/* Disable clip only for lg and xl */
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .clip-path-bottom {
+    clip-path: none;
+    -webkit-clip-path: none;
+  }
 }

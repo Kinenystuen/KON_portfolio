@@ -23,7 +23,7 @@ export type ButtonProps = {
   title?: string;
   ariaLabel?: string;
   disabled?: boolean;
-  buttonType?: "violet" | "blue" | "transparent";
+  buttonType?: "violet" | "blue" | "gradient" | "transparent";
   type?: "button" | "submit" | "reset";
 };
 

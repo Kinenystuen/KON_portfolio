@@ -51,16 +51,16 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full mx-auto h-16 z-50">
+    <div className="w-full mx-auto h-0 z-50">
       <div className="fixed w-full p-2 px-4 lg:px-6 ">
         {" "}
         {/* Fixed Header */}
         <div
           className={`h-14 lg:h-16 rounded- w-full mx-auto
-          backdrop-filter backdrop-blur-lg transform duration-600 z-50  rounded-xl ${
+          transform duration-600 z-50  rounded-xl ${
             scrolling
-              ? "bg-customBg/50 dark:bg-customBgDark/50 border-gray-400 shadow-sm"
-              : ""
+              ? "bg-customBg/90 dark:bg-customBgDark/90 border-gray-400 shadow-sm backdrop-blur-lg backdrop-filter "
+              : "bg-transparent dark:bg-transparent"
           }`}
         >
           <div className="flex justify-between items-center h-full ">
