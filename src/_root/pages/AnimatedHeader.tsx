@@ -89,7 +89,7 @@ const AnimatedHeader: React.FC = () => {
   const { translateY, scale } = calculateTransform();
 
   return (
-    <div className="relative w-full h-[220vh] overflow-hidden dark:bg-gradient-to-tr dark:from-[#8284AE ] dark:to-[#7578A8]">
+    <div className="relative w-full h-[220vh] overflow-hidden dark:bg-gradient-to-tr dark:from-[#8284AE] dark:to-[#7578A8]">
       <H1
         className="absolute left-1/2 text-2xl  sm:text-2xl md:text-4xl font-bold text-center transition-all duration-300 ease-out z-10"
         style={{
