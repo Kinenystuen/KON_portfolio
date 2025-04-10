@@ -36,7 +36,7 @@ const HeaderHero = ({ onViewWorkClick }: HeaderHeroProps) => {
             <div className="relative z-20 flex flex-col-reverse lg:flex-row lg:items-end justify-center px-4 md:px-12 xl:px-32 mx-auto max-w-7xl lg:gap-20">
               <HeroImage />
 
-              <div className="flex flex-grow md:flex-1 w-full justify-end lg:justify-center flex-col items-center lg:items-end text-center lg:text-right gap-4 mt-20 xs:mt-10 mb-[-2.5rem] lg:mt-0 lg:mb-10">
+              <div className="flex flex-grow md:flex-1 w-full justify-end lg:justify-center flex-col items-center lg:items-end text-center lg:text-right gap-4 mt-20 xs:mt-10 mb-[-2.5rem] lg:mt-0 lg:mb-10 z-30">
                 <H1 className="font-['Montserrat'] font-semibold  text-3xl md:text-4xl xl:text-5xl text-customBgDark dark:text-white leading-tight">
                   Kine Odden Nystuen
                 </H1>
