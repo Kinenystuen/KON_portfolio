@@ -36,14 +36,19 @@ const HeaderHero = ({ onViewWorkClick }: HeaderHeroProps) => {
             <div className="relative z-20 flex flex-col-reverse lg:flex-row lg:items-end justify-center px-4 md:px-12 xl:px-32 mx-auto max-w-7xl lg:gap-20">
               <HeroImage />
 
-              <div className="flex flex-grow md:flex-1 w-full justify-end lg:justify-center flex-col items-center lg:items-end text-center lg:text-right gap-4 mt-20 xs:mt-10 mb-[-2.5rem] lg:mt-0 lg:mb-10">
-                <H1 className="font-['Montserrat'] font-semibold  text-3xl md:text-4xl xl:text-5xl text-customBgDark dark:text-white leading-tight">
+              <div className="flex flex-grow md:flex-1 w-full justify-end lg:justify-center flex-col items-center lg:items-end text-center gap-1 lg:text-right mt-20 xs:mt-10 mb-[-2.5rem] lg:mt-0 lg:mb-10 z-30">
+                <H1 className="font-semibold text-[29px] md:text-[36px] xl:text-[44px] text-customBgDark dark:text-white leading-tight">
                   Kine Odden Nystuen
                 </H1>
-                <P className="text-xl md:text-2xl lg:text-3xl text-customBgDark/80 dark:text-gray-300">
+                <P className="text-[18px] md:text-[22px] xl:text-[27px] text-customBgDark/80 dark:text-gray-300">
                   Front-end Developer
                 </P>
-                <Button buttonType="gradient" onClick={onViewWorkClick}>
+
+                <Button
+                  buttonType="gradient"
+                  className="mt-6 transition-transform transform hover:-translate-y-1 active:translate-y-0.5"
+                  onClick={onViewWorkClick}
+                >
                   View My Projects
                 </Button>
               </div>

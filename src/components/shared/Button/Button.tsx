@@ -3,12 +3,14 @@ import { ButtonProps } from "../../../library/types";
 function Button({
   onClick,
   children,
-  className,
+  className = "",
   title,
   ariaLabel,
   buttonType,
   disabled,
-  type
+  type = "button",
+  href,
+  target
 }: ButtonProps) {
   let buttonClass = "";
 
@@ -23,15 +25,34 @@ function Button({
       break;
     case "gradient":
       buttonClass =
-        "bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:from-indigo-600 hover:to-purple-600 transition-transform transform hover:-translate-y-1 active:translate-y-0.5 focus:ring-2 focus:ring-violet-500 focus:ring-offset-1  focus:ring-offset-customBg dark:focus:ring-offset-customBgDark";
+        "bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:text-white shadow-lg hover:from-indigo-600 hover:to-purple-600 focus:ring-2 focus:ring-violet-500 focus:ring-offset-1 focus:ring-offset-customBg dark:focus:ring-offset-customBgDark ";
       break;
     case "transparent":
       buttonClass =
-        "bg-transparent text-gray-600 hover:text-black hover:bg-transparent dark:hover:bg-transparent  dark:text-whiteFont-500 dark:hover:text-white ";
+        "p-2 bg-transparent text-gray-600 hover:text-black hover:bg-transparent dark:hover:bg-transparent  dark:text-whiteFont-500 dark:hover:text-white ";
       break;
     default:
       buttonClass =
-        "bg-gray-500 text-black dark:bg-BtnColor dark:hover:bg-BtnColor-400";
+        "bg-gray-500 hover:bg-gray-600 text-white hover:text-white dark:bg-BtnColor dark:hover:bg-BtnColor-400 ";
+  }
+
+  const combinedClassName = `button p-2 px-4 hover:text-black rounded-xl transition duration-300 ease-in-out ${buttonClass} ${className}`;
+
+  if (href) {
+    // Render an anchor tag when href is provided.
+    return (
+      <a
+        href={href}
+        target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
+        title={title}
+        aria-label={ariaLabel}
+        className={combinedClassName}
+        onClick={onClick}
+      >
+        {children}
+      </a>
+    );
   }
 
   return (
@@ -41,7 +62,7 @@ function Button({
       aria-label={ariaLabel}
       type={type}
       disabled={disabled}
-      className={`button rounded-xl transition duration-300 ease-in-out ${buttonClass} ${className}`}
+      className={combinedClassName}
     >
       {children}
     </button>

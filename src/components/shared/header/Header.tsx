@@ -57,10 +57,11 @@ const Header = () => {
         {/* Fixed Header */}
         <div
           className={`h-14 lg:h-16 rounded- w-full mx-auto
-          transform duration-600 z-50  rounded-xl ${
+          transform duration-700 transition-all
+          z-50  rounded-xl ${
             scrolling
               ? "bg-customBg/90 dark:bg-customBgDark/90 border-gray-400 shadow-sm backdrop-blur-lg backdrop-filter "
-              : "bg-transparent dark:bg-transparent"
+              : "bg-transparent/0 dark:bg-transparent"
           }`}
         >
           <div className="flex justify-between items-center h-full ">

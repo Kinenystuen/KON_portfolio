@@ -15,17 +15,19 @@ export type H1Props = {
 };
 
 /* Button props */
-export type ButtonProps = {
-  ButtonType?: "primary" | "secondary";
+
+export interface ButtonProps {
   onClick?: () => void;
   children: React.ReactNode;
   className?: string;
   title?: string;
   ariaLabel?: string;
+  buttonType?: "blue" | "violet" | "gradient" | "transparent";
   disabled?: boolean;
-  buttonType?: "violet" | "blue" | "gradient" | "transparent";
   type?: "button" | "submit" | "reset";
-};
+  href?: string;
+  target?: string;
+}
 
 /* Loader Props */
 export interface LoaderProps {
