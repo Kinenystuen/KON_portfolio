@@ -3,6 +3,7 @@ import Modal from "../ui/Modal";
 import H3 from "../shared/Typography/H3";
 import P from "../shared/Typography/P";
 import { getBaseUrl } from "../shared/BaseNameUtils";
+import Button from "../shared/Button/Button";
 
 interface ProjectCardProps {
   name: string;
@@ -22,17 +23,19 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
   return (
     <div className="cursor-pointer group ">
       {/* Project Card */}
+
       <div
-        className="bg-white dark:bg-customBgDark-500 relative rounded-xl shadow-sm overflow-hidden"
+        role="link"
+        tabIndex={0}
+        className="group block relative rounded-xl shadow-sm overflow-hidden
+             focus:outline-none focus:ring-2 focus:ring-offset-2
+             focus:ring-indigo-500"
         onClick={() => setIsModalOpen(true)}
         onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
+          if (e.key === "Enter") {
             e.preventDefault();
-            setIsModalOpen(true);
           }
         }}
-        tabIndex={0}
-        role="button"
         aria-label={`View details for ${name}`}
       >
         {/* Image */}
@@ -109,22 +112,21 @@ const ProjectCard: React.FC<{ data: ProjectCardProps }> = ({ data }) => {
 
               {/* Links */}
               <div className="flex justify-between sm:justify-start gap-3 ">
-                <a
+                <Button
                   href={githubRepo}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="button rounded transition duration-300 ease-in-out bg-gray-500 text-white hover:bg-gray-600 hover:text-white dark:bg-violet-900 dark:hover:bg-violet-800 dark:text-gray-100 border dark:border-violet-900"
+                  className="transition-transform transform hover:-translate-y-1 active:translate-y-0.5"
                 >
                   GitHub Repo
-                </a>
-                <a
+                </Button>
+                <Button
                   href={liveSite}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="button rounded transition duration-300 ease-in-out bg-gray-500 text-white hover:bg-gray-600 hover:text-white dark:bg-violet-900 dark:hover:bg-violet-800 dark:text-gray-100 border dark:border-violet-900"
+                  buttonType="gradient"
+                  className="transition-transform transform hover:-translate-y-1 active:translate-y-0.5"
                 >
                   Live Site
-                </a>
+                </Button>
               </div>
             </div>
           </div>
