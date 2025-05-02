@@ -64,8 +64,14 @@ const Dropdown: React.FC<DropdownProps> = ({ label, items }) => {
         <div className="absolute z-10 mt-2 bg-white rounded-md shadow w-44 dark:bg-gray-700">
           <ul className="py-2 text-sm">
             {items.map((item, index) => (
-              <li key={index} className="border-y border-gray-600">
+              <li
+                key={index}
+                className={`border-b border-gray-200 dark:border-gray-600 ${
+                  index === items.length - 1 ? "border-b-0" : ""
+                }`}
+              >
                 <Button
+                  buttonType="transparent"
                   onClick={() => {
                     if (item.href && location.pathname !== item.href) {
                       navigate(item.href);
