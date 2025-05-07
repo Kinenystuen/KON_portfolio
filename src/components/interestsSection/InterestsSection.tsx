@@ -5,10 +5,10 @@ import InterestsBox from "../shared/header/InterestsBox";
 const InterestsSection = () => {
   return (
     <Section animate={false} className=" bg-transparent text-black">
-      <div className="container mx-auto py-10 max-w-6xl">
+      <div className="container mx-auto py-10 max-w-7xl">
         <H2 className="font-bold text-3xl uppercase mb-6">Interests</H2>
       </div>
-      <div className="container mx-auto max-w-4xl ">
+      <div className="container mx-auto max-w-4xl lg:max-w-4xl">
         <div className="grid grid-cols-2 gap-2 md:gap-6">
           <InterestsBox
             title="Art"

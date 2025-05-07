@@ -25,7 +25,7 @@ const KnowledgeSection = () => {
       {/* <TopWave /> */}
       <div className="relative px-4">
         <div
-          className="relative overflow-hidden shadow-md container bg-gradient-to-r from-color4-400 to-color4-500 dark:from-[#7487CD] dark:to-customBlue background-animation mx-auto py-10 max-w-6xl rounded-xl"
+          className="relative overflow-hidden shadow-md container bg-gradient-to-r from-color4-400 to-color4-500 dark:from-[#7487CD] dark:to-customBlue background-animation mx-auto py-10 max-w-7xl rounded-xl"
           ref={boxRef}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
