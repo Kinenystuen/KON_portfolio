@@ -33,7 +33,7 @@ const HeaderHero = ({ onViewWorkClick }: HeaderHeroProps) => {
         ></div>
         <div className="relative w-full lg:h-screen">
           <div className="relative min-h-[70vh] md:min-h-[70vh] lg:min-h-[50vh] lg:max-h-[70vh] 2xl:min-h-[50vh]  pt-20 bg-customBg dark:bg-customBgDark flex content-end mb-20">
-            <div className="relative z-20 flex flex-col-reverse lg:flex-row lg:items-end justify-center px-4 md:px-12 xl:px-32 mx-auto max-w-7xl lg:gap-20">
+            <div className="relative z-20 flex flex-col-reverse lg:flex-row lg:items-end justify-center px-4 md:px-12 xl:px-32 mx-auto 2xl:max-w-7xl lg:gap-20">
               <HeroImage />
 
               <div className="flex flex-grow md:flex-1 w-full justify-end lg:justify-center flex-col items-center lg:items-end text-center gap-1 lg:text-right mt-20 xs:mt-10 mb-[-2.5rem] lg:mt-0 lg:mb-10 z-30">
@@ -64,9 +64,9 @@ const HeaderHero = ({ onViewWorkClick }: HeaderHeroProps) => {
           transition={{ duration: 0.6, ease: "easeIn" }}
           className=" w-full z-20 mt-20"
         >
-          <div className=" mx-3 sm:mx-auto md:min-h-screen py-20 pb-40 pt-48 sm:pt-32 max-w-4xl flex flex-col md:flex-row items-center justify-center gap-6 p-6 rounded-xl">
+          <div className=" mx-3 sm:mx-auto md:min-h-screen py-20 pb-40 pt-48 sm:pt-32 max-w-4xl 2xl:max-w-6xl flex flex-col md:flex-row items-center justify-center gap-6 2xl:gap-10 p-6 rounded-xl">
             {/* Profile Image */}
-            <div className="overflow-hidden rounded-full w-56 h-56 shadow-lg flex-shrink-0">
+            <div className="overflow-hidden rounded-full w-56 h-56 2xl:w-80 2xl:h-80 shadow-lg flex-shrink-0">
               <img
                 className="h-full w-full object-cover transition-transform duration-300 ease-out scale-150"
                 src="/assets/img/IMG_0829Kine2.jpg"

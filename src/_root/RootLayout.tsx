@@ -8,17 +8,17 @@ import Header from "../components/shared/header/Header";
 const RootLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header */}
-      <Header />
-
-      {/* Main Section */}
-      <main>
-        <Outlet />
-      </main>
-
-      {/* Footer */}
-      <FooterBar />
-    </div>
+    {/* Header */}
+    <Header />
+  
+    {/* Main Section */}
+    <main className="flex-1">
+      <Outlet />
+    </main>
+  
+    {/* Footer */}
+    <FooterBar />
+  </div>
   );
 };
 
