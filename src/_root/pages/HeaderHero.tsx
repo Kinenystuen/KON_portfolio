@@ -68,8 +68,8 @@ const HeaderHero = ({ onViewWorkClick }: HeaderHeroProps) => {
             {/* Profile Image */}
             <div className="overflow-hidden rounded-full w-56 h-56 2xl:w-80 2xl:h-80 shadow-lg flex-shrink-0">
               <img
-                className="h-full w-full object-cover transition-transform duration-300 ease-out scale-150"
-                src="/assets/img/IMG_0829Kine2.jpg"
+                className="h-full w-full object-cover transition-transform duration-300 ease-out scale-175"
+                src="/assets/img/DSC03217.JPG"
                 alt="Profile"
               />
             </div>
